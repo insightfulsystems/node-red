@@ -1,0 +1,48 @@
+language: minimal
+sudo: required
+addons:
+  apt:
+    packages:
+      - docker-ce # use experimental features
+
+services:
+  - docker
+
+before_install:
+  - docker --version  # document the version travis is using
+  - echo '{"experimental":true}' | sudo tee /etc/docker/daemon.json
+  - mkdir -p $HOME/.docker && echo '{"experimental":"enabled"}' | tee $HOME/.docker/config.json
+  - sudo service docker restart
+
+#install:
+#  - docker run --rm --privileged multiarch/qemu-user-static:register --reset # moved to Makefile, left here for reference
+
+jobs:
+  include:
+    - stage: amd64
+      script:
+        - make wrap-amd64
+        - make node-amd64
+        - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+        - make push-amd64
+    - stage: arm32v6
+      script:
+        - make qemu
+        - make wrap-arm32v6
+        - make node-arm32v6
+        - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+        - make push-arm32v6
+    - stage: arm32v7
+      script:
+        - make qemu
+        - make wrap-arm32v7
+        - make node-arm32v7
+        - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+        - make push-arm32v7
+    - stage: manifest
+      script:
+        - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+        - make manifest
+
+#after_success:
+#  - make manifest 
