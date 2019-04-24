@@ -14,7 +14,7 @@ export TAGS=latest bots automation
 .PHONY: qemu wrap node push manifest clean
 
 qemu:
-	-docker run --rm --privileged multiarch/qemu-user-static:register
+	-docker run --rm --privileged multiarch/qemu-user-static:register --reset
 
 node-red:
 	$(foreach tag, $(TAGS), make tag-$(tag);)
