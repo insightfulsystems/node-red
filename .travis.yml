@@ -14,28 +14,35 @@ before_install:
   - mkdir -p $HOME/.docker && echo '{"experimental":"enabled"}' | tee $HOME/.docker/config.json
   - sudo service docker restart
 
-jobs:
-  include:
-    - stage: base
-      script:
-        - make qemu
-        - make tag-base
-        - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-        - make push-base
-    - stage: bots
-      script:
-        - make qemu
-        - make tag-bots
-        - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-        - make push-bots
-    - stage: automation 
-      script:
-        - make qemu
-        - make tag-automation
-        - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-        - make push-automation
-    - stage: manifest
-      script:
-        - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-        - make manifest
+install:
+  - make qemu
 
+matrix:
+  include:
+    - env: TAG=base       ARCH=amd64   BUNDLE=slim
+    - env: TAG=base       ARCH=arm32v7 BUNDLE=slim
+    - env: TAG=base       ARCH=arm32v6 BUNDLE=slim
+    - env: TAG=base       ARCH=amd64   BUNDLE=build
+    - env: TAG=base       ARCH=arm32v7 BUNDLE=build
+    - env: TAG=base       ARCH=arm32v6 BUNDLE=build
+    - env: TAG=bots       ARCH=amd64   BUNDLE=slim
+    - env: TAG=bots       ARCH=arm32v7 BUNDLE=slim
+    - env: TAG=bots       ARCH=arm32v6 BUNDLE=slim
+    - env: TAG=bots       ARCH=amd64   BUNDLE=build
+    - env: TAG=bots       ARCH=arm32v7 BUNDLE=build
+    - env: TAG=bots       ARCH=arm32v6 BUNDLE=build
+    - env: TAG=automation ARCH=amd64   BUNDLE=slim
+    - env: TAG=automation ARCH=arm32v7 BUNDLE=slim
+    - env: TAG=automation ARCH=arm32v6 BUNDLE=slim
+    - env: TAG=automation ARCH=amd64   BUNDLE=build
+    - env: TAG=automation ARCH=arm32v7 BUNDLE=build
+    - env: TAG=automation ARCH=arm32v6 BUNDLE=build
+
+script: 
+   - make env
+   - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+   - make push
+
+after_success:
+   - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+   - make manifest

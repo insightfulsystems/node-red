@@ -8,6 +8,9 @@ export NODE_MAJOR_VERSION=10
 export TARGET_ARCHITECTURES=amd64 arm32v7 arm32v6
 export TAGS=base bots automation
 export BUNDLES=slim build
+export BUNDLE?=slim
+export TAG?=base
+export ARCH?=amd64
 
 # Permanent local overrides
 -include .env
@@ -16,6 +19,16 @@ export BUNDLES=slim build
 
 qemu:
 	-docker run --rm --privileged multiarch/qemu-user-static:register --reset
+
+env:
+	echo "\n\n\n*** Building $(BUNDLE) $(TAG) for $(ARCH) ***\n\n\n" && \
+	cp tags/$(TAG)/package.json bundles/$(BUNDLE)/package.json && \
+	docker build --build-arg BUILD_DATE=$(BUILD_DATE) \
+		--build-arg ARCH=$(ARCH) \
+		--build-arg BASE=$(BUILD_IMAGE_NAME):$(NODE_MAJOR_VERSION)-$(ARCH) \
+		--build-arg VCS_REF=$(VCS_REF) \
+		--build-arg VCS_URL=$(VCS_URL) \
+		-t $(IMAGE_NAME):$(BUNDLE)-$(TAG)-$(ARCH) bundles/$(BUNDLE) \
 
 node-red:
 	$(foreach tag, $(TAGS), make tag-$(tag);)
