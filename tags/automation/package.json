@@ -30,7 +30,6 @@
         "node-red-node-suncalc": "*",
         "node-red-node-random": "*",
 
-	"node-red-admin": "*",
         "node-red-dashboard": "*",
 	"node-red-node-sqlite": "*",
 	"node-red-contrib-startup-trigger": "*",

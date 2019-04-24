@@ -29,7 +29,8 @@ RUN adduser -h /usr/src/node-red -D -H node-red \
 COPY ./package.json /usr/src/node-red/
 
 USER node-red
-RUN yarn install 
+RUN yarn install \
+ && rm -rf /usr/src/node-red/.cache
 
 # User configuration directory volume
 EXPOSE 1880

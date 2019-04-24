@@ -28,9 +28,7 @@
         "node-red-node-msgpack": "*",
         "node-red-node-base64": "*",
         "node-red-node-suncalc": "*",
-        "node-red-node-random": "*",
-
-	"node-red-admin": "*"
+        "node-red-node-random": "*"
     },
     "engines": {
         "node": "10.*.*"

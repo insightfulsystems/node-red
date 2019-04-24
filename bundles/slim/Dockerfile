@@ -31,6 +31,7 @@ RUN apk add --no-cache --virtual .build-deps \
         make \
         python \
  && yarn install \
+ && rm -rf /usr/local/share/.cache \
  && apk del .build-deps
 
 USER node-red
