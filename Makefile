@@ -5,7 +5,7 @@ export BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"`
 export TAG_DATE=`date -u +"%Y%m%d"`
 export BUILD_IMAGE_NAME=insightful/alpine-node
 export NODE_MAJOR_VERSION=10
-export TARGET_ARCHITECTURES=amd64 arm32v6 arm32v7
+export TARGET_ARCHITECTURES=amd64 arm32v7 arm32v6
 export TAGS=base bots automation
 export BUNDLES=slim build
 
