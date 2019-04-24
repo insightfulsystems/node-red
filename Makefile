@@ -39,16 +39,22 @@ push:
 	docker push $(IMAGE_NAME)
 
 push-%:
-	$(eval ARCH := $*)
-	docker push $(IMAGE_NAME):$(NODE_MAJOR_VERSION)-$(ARCH)
+	$(eval TAG := $*)
+	$(foreach ARCH, $(TARGET_ARCHITECTURES), \
+		docker push $(IMAGE_NAME):$(BUNDLE)-$(TAG)-$(ARCH) \
+	;)
 
 manifest:
-	$(foreach tag, $(TAGS), \
+	$(foreach TAG, $(TAGS), \
 		docker manifest create --amend \
-			$(IMAGE_NAME):latest \
-			$(foreach arch, $(TARGET_ARCHITECTURES), $(IMAGE_NAME):$(tag)-$(arch) )\
-		docker manifest push $(IMAGE_NAME):$(tag) \
+			$(IMAGE_NAME):$(TAG) \
+			$(foreach ARCH, $(TARGET_ARCHITECTURES), $(IMAGE_NAME):base-$(TAG)-$(ARCH))\
+		docker manifest push $(IMAGE_NAME):$(TAG) \
 	;)
+	docker manifest create --amend \
+		$(IMAGE_NAME):latest \
+		$(foreach ARCH, $(TARGET_ARCHITECTURES), $(IMAGE_NAME):base-slim-$(ARCH))
+	docker manifest push $(IMAGE_NAME):latest
 
 clean:
 	-docker rm -fv $$(docker ps -a -q -f status=exited)

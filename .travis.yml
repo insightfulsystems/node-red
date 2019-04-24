@@ -16,26 +16,24 @@ before_install:
 
 jobs:
   include:
-    - stage: amd64
-      script:
-        - make wrap-amd64
-        - make node-amd64
-        - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-        - make push-amd64
-    - stage: arm32v6
+    - stage: base
       script:
         - make qemu
-        - make wrap-arm32v6
-        - make node-arm32v6
+        - make tag-base
         - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-        - make push-arm32v6
-    - stage: arm32v7
+        - make push-base
+    - stage: bots
       script:
         - make qemu
-        - make wrap-arm32v7
-        - make node-arm32v7
+        - make tag-bots
         - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-        - make push-arm32v7
+        - make push-bots
+    - stage: automation 
+      script:
+        - make qemu
+        - make tag-automation
+        - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+        - make push-automation
     - stage: manifest
       script:
         - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
