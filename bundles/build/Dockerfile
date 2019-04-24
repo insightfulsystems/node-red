@@ -29,7 +29,7 @@ RUN adduser -h /usr/src/node-red -D -H node-red \
 COPY ./package.json /usr/src/node-red/
 
 USER node-red
-RUN yarn install --verbose \
+RUN yarn install --verbose 2>&1 | awk 'NR % 100 == 0' \
  && rm -rf /usr/src/node-red/.cache
 
 # User configuration directory volume

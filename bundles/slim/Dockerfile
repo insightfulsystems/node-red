@@ -30,7 +30,7 @@ RUN apk add --no-cache --virtual .build-deps \
         linux-headers \
         make \
         python \
- && yarn install --verbose \
+ && yarn install --verbose 2>&1 | awk 'NR % 100 == 0' \
  && rm -rf /usr/local/share/.cache \
  && apk del .build-deps
 
