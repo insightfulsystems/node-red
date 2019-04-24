@@ -41,7 +41,9 @@ push:
 push-%:
 	$(eval TAG := $*)
 	$(foreach ARCH, $(TARGET_ARCHITECTURES), \
-		docker push $(IMAGE_NAME):$(BUNDLE)-$(TAG)-$(ARCH) \
+		$(foreach BUNDLE, $(BUNDLES), \
+			docker push $(IMAGE_NAME):$(BUNDLE)-$(TAG)-$(ARCH) \
+		;) \
 	;)
 
 manifest:
