@@ -18,6 +18,8 @@ RUN adduser -h /usr/src/node-red -D -H node-red \
 
 # package.json contains Node-RED NPM module and node dependencies
 COPY ./package.json /usr/src/node-red/
+
+# This image includes the build tools but removes them after installing modules
 RUN apk add --no-cache --virtual .build-deps \
         binutils-gold \
         curl \

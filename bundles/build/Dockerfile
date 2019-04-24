@@ -3,11 +3,20 @@ FROM ${BASE}
 
 # Home directory for Node-RED application source code.
 # /data directory, contains flows, config and nodes.
-# Add git binary for supporting projects feature
+# This image includes the build tools permanently
 RUN mkdir -p /usr/src/node-red \
  && mkdir /data \
  && apk add --no-cache \
-    git
+    git \
+    binutils-gold \
+    curl \
+    g++ \
+    gcc \
+    gnupg \
+    libgcc \
+    linux-headers \
+    make \
+    python 
 
 WORKDIR /usr/src/node-red
 
@@ -18,20 +27,9 @@ RUN adduser -h /usr/src/node-red -D -H node-red \
 
 # package.json contains Node-RED NPM module and node dependencies
 COPY ./package.json /usr/src/node-red/
-RUN apk add --no-cache --virtual .build-deps \
-        binutils-gold \
-        curl \
-        g++ \
-        gcc \
-        gnupg \
-        libgcc \
-        linux-headers \
-        make \
-        python \
- && yarn install \
- && apk del .build-deps
 
 USER node-red
+RUN yarn install 
 
 # User configuration directory volume
 EXPOSE 1880

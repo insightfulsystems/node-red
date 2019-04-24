@@ -14,9 +14,6 @@ before_install:
   - mkdir -p $HOME/.docker && echo '{"experimental":"enabled"}' | tee $HOME/.docker/config.json
   - sudo service docker restart
 
-#install:
-#  - docker run --rm --privileged multiarch/qemu-user-static:register --reset # moved to Makefile, left here for reference
-
 jobs:
   include:
     - stage: amd64
@@ -44,5 +41,3 @@ jobs:
         - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
         - make manifest
 
-#after_success:
-#  - make manifest 
