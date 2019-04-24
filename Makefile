@@ -44,7 +44,7 @@ push-%:
 		$(foreach BUNDLE, $(BUNDLES), \
 			docker push $(IMAGE_NAME):$(BUNDLE)-$(TAG)-$(ARCH) \
 		;) \
-	;)
+	)
 
 manifest:
 	$(foreach TAG, $(TAGS), \
