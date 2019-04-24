@@ -16,11 +16,22 @@ RUN adduser -h /usr/src/node-red -D -H node-red \
  && chown -R node-red:node-red /data \
  && chown -R node-red:node-red /usr/src/node-red
 
-USER node-red
-
 # package.json contains Node-RED NPM module and node dependencies
 COPY ./package.json /usr/src/node-red/
-RUN npm install
+RUN apk add --no-cache --virtual .build-deps \
+        binutils-gold \
+        curl \
+        g++ \
+        gcc \
+        gnupg \
+        libgcc \
+        linux-headers \
+        make \
+        python \
+ && yarn install \
+ && apk del .build-deps
+
+USER node-red
 
 # User configuration directory volume
 EXPOSE 1880

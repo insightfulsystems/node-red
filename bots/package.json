@@ -33,7 +33,6 @@
 	"node-red-admin": "*",
         "node-red-dashboard": "*",
 	"node-red-node-sqlite": "*",
-        "node-red-contrib-inotify": "*",
         "node-red-contrib-startup-trigger": "*"
     },
     "engines": {
