@@ -14,10 +14,10 @@ export TAGS=latest bots automation
 .PHONY: qemu wrap node push manifest clean
 
 qemu:
-	-docker run --rm --privileged multiarch/qemu-user-static:register
+	-docker run --rm --privileged multiarch/qemu-user-static:register --reset
 	-mkdir tmp 
 	cd tmp && \
-	curl -L -o qemu-arm-static.tar.gz https://github.com/multiarch/qemu-user-static/releases/download/v3.0.0/qemu-arm-static.tar.gz && \
+	curl -L -o qemu-arm-static.tar.gz https://github.com/multiarch/qemu-user-static/releases/download/v3.1.0-3/qemu-arm-static.tar.gz && \
 	tar xzf qemu-arm-static.tar.gz && \
 	cp qemu-arm-static ../qemu/
 
