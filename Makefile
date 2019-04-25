@@ -60,15 +60,15 @@ push-%:
 	)
 
 manifest:
-	$(foreach TAG, $(TAGS), \
+	$(foreach BUNDLE, $(BUNDLES), \
 		docker manifest create --amend \
-			$(IMAGE_NAME):$(TAG) \
-			$(foreach ARCH, $(TARGET_ARCHITECTURES), $(IMAGE_NAME):base-$(TAG)-$(ARCH))\
-		docker manifest push $(IMAGE_NAME):$(TAG) \
+			$(IMAGE_NAME):$(BUNDLE) \
+			$(foreach ARCH, $(TARGET_ARCHITECTURES), $(IMAGE_NAME):$(BUNDLE)-base-$(ARCH)); \
+		docker manifest push $(IMAGE_NAME):$(BUNDLE) \
 	;)
 	docker manifest create --amend \
 		$(IMAGE_NAME):latest \
-		$(foreach ARCH, $(TARGET_ARCHITECTURES), $(IMAGE_NAME):base-slim-$(ARCH))
+		$(foreach ARCH, $(TARGET_ARCHITECTURES), $(IMAGE_NAME):slim-base-$(ARCH))
 	docker manifest push $(IMAGE_NAME):latest
 
 clean:
