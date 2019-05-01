@@ -29,7 +29,11 @@ RUN adduser -h /usr/src/node-red -D -H node-red \
 COPY ./package.json /usr/src/node-red/
 
 USER node-red
-RUN yarn install \
+
+# Set C compiler flags to work around grpc compile errors in ARM
+RUN CXXFLAGS="-Wno-error=class-memaccess -Wno-error=ignored-qualifiers -Wno-error=stringop-truncation" \
+    CFLAGS="-Wno-error=class-memaccess -Wno-error=ignored-qualifiers -Wno-error=stringop-truncation" \
+    yarn install \
  && rm -rf /usr/src/node-red/.cache
 
 # User configuration directory volume
