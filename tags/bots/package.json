@@ -63,10 +63,7 @@
         "node-red-viseo-bot-manager": "*",
         "node-red-viseo-helper": "*",
         "node-red-viseo-middleware": "*",
-        "node-red-viseo-storage-plugin": "*",
-        "uuid": "*",
-        "xmldom": "*",
-        "xpath": "*"
+        "node-red-viseo-storage-plugin": "*"
     },
     "engines": {
         "node": "10.*.*"
