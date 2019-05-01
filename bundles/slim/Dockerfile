@@ -30,7 +30,9 @@ RUN apk add --no-cache --virtual .build-deps \
         linux-headers \
         make \
         python \
- && yarn install \
+ && CXXFLAGS="-Wno-error=class-memaccess -Wno-error=ignored-qualifiers -Wno-error=stringop-truncation" \
+    CFLAGS="-Wno-error=class-memaccess -Wno-error=ignored-qualifiers -Wno-error=stringop-truncation" \
+    yarn install \
  && rm -rf /usr/local/share/.cache \
  && apk del .build-deps
 
