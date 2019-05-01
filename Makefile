@@ -11,6 +11,7 @@ export BUNDLES=slim build
 export BUNDLE?=slim
 export TAG?=base
 export ARCH?=amd64
+export SHELL=/bin/bash
 
 # Permanent local overrides
 -include .env
@@ -59,17 +60,37 @@ push-%:
 		;) \
 	)
 
+expand-%: # expand architecture variants for manifest
+	@if [ "$*" == "amd64" ] ; then \
+	   echo '--arch $*'; \
+	elif [[ "$*" == *"arm"* ]] ; then \
+	   echo '--arch arm --variant $*' | cut -c 1-21,27-; \
+	fi
+
 manifest:
 	$(foreach BUNDLE, $(BUNDLES), \
 		docker manifest create --amend \
 			$(IMAGE_NAME):$(BUNDLE) \
 			$(foreach ARCH, $(TARGET_ARCHITECTURES), $(IMAGE_NAME):$(BUNDLE)-base-$(ARCH)); \
+		$(foreach arch, $(TARGET_ARCHITECTURES), \
+		docker manifest annotate \
+			$(IMAGE_NAME):$(BUNDLE) \
+			$(IMAGE_NAME):$(BUNDLE)-base-$(arch) $(shell make expand-$(arch));) \
 		docker manifest push $(IMAGE_NAME):$(BUNDLE) \
 	;)
 	docker manifest create --amend \
 		$(IMAGE_NAME):latest \
 		$(foreach ARCH, $(TARGET_ARCHITECTURES), $(IMAGE_NAME):slim-base-$(ARCH))
+	$(foreach arch, $(TARGET_ARCHITECTURES), \
+		docker manifest annotate \
+			$(IMAGE_NAME):latest \
+			$(IMAGE_NAME):slim-base-$(arch) $(shell make expand-$(arch));)
 	docker manifest push $(IMAGE_NAME):latest
+
+test:
+	docker run \
+		-p 1880:1880 \
+		-ti $(IMAGE_NAME):$(BUNDLE)-$(TAG)-$(ARCH)
 
 clean:
 	-docker rm -fv $$(docker ps -a -q -f status=exited)
