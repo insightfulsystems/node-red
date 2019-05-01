@@ -39,7 +39,7 @@ matrix:
     - env: TAG=automation ARCH=arm32v6 BUNDLE=build
 
 script: 
-   - make env
+   - travis_wait 30 make env
    - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
    - make push
 
