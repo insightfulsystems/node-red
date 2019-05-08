@@ -37,10 +37,11 @@
 	"node-red-node-wol": "*",
 	"node-red-node-prowl": "*",
 	"node-red-contrib-broadlink": "*",
-	"node-red-contrib-wemo-emulator": "*",
+	"node-red-contrib-homekit-bridged": "*",
+	"node-red-contrib-light-scheduler": "*",
 	"node-red-contrib-lgtv": "*",
 	"node-red-contrib-meobox": "*",
-	"node-red-contrib-homekit-bridged": "*"
+	"node-red-contrib-wemo-emulator": "*"
     },
     "engines": {
         "node": "10.*.*"
