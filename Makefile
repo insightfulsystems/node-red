@@ -1,4 +1,5 @@
 export IMAGE_NAME?=insightful/node-red
+export PRIVATE_REGISTRY?=registry.lan:5000
 export VCS_REF=`git rev-parse --short HEAD`
 export VCS_URL=https://github.com/insightfulsystems/node-red
 export BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"`
@@ -47,7 +48,7 @@ tag-%:
 				--build-arg VCS_URL=$(VCS_URL) \
 				-t $(IMAGE_NAME):$(BUNDLE)-$(TAG)-$(ARCH) bundles/$(BUNDLE) \
 		;) \
-	;)
+	)
 
 push:
 	docker push $(IMAGE_NAME)
@@ -86,6 +87,13 @@ manifest:
 			$(IMAGE_NAME):latest \
 			$(IMAGE_NAME):slim-base-$(arch) $(shell make expand-$(arch));)
 	docker manifest push $(IMAGE_NAME):latest
+
+local-push-arm32v7:
+	$(foreach BUNDLE, $(BUNDLES), docker tag \
+	      	$(IMAGE_NAME):$(BUNDLE)-base-arm32v7 \
+		$(PRIVATE_REGISTRY)/$(IMAGE_NAME):$(BUNDLE) \
+	;)
+	docker push $(PRIVATE_REGISTRY)/$(IMAGE_NAME)
 
 test:
 	docker run \
