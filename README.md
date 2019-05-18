@@ -1,7 +1,7 @@
 # node-red
 
 ```
-docker pull insightful/node-red:slim
+docker pull insightful/node-red:slim-automation
 ```
 
 Multi-arch Node-RED containers based on the official images, and the following changes:
