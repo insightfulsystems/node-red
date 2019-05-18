@@ -8,6 +8,7 @@ RUN mkdir -p /usr/src/node-red \
  && mkdir /data \
  && apk add --no-cache \
     git \
+    shadow \
     binutils-gold \
     curl \
     g++ \

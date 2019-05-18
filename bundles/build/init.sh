@@ -11,10 +11,10 @@ echo "UID:GID - $PUID:$PGID"
 
 groupmod -o -g "$PGID" $USER
 usermod -o -u "$PUID" $USER
-usermod -o -d /usr/src/node-red $USER
+usermod -d /usr/src/node-red $USER
 
 chown $USER:$USER /data
 chown $USER:$USER /usr/src/node-red
 
 # CMD
-su -c $USER npm start -- --userDir /data
+su -c "/usr/local/bin/npm start -- --userDir /data" -l $USER

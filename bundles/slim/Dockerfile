@@ -7,7 +7,8 @@ FROM ${BASE}
 RUN mkdir -p /usr/src/node-red \
  && mkdir /data \
  && apk add --no-cache \
-    git
+    git \
+    shadow
 
 WORKDIR /usr/src/node-red
 

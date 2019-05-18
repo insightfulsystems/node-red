@@ -47,7 +47,7 @@ tag-%:
 				--build-arg VCS_URL=$(VCS_URL) \
 				-t $(IMAGE_NAME):$(BUNDLE)-$(TAG)-$(ARCH) bundles/$(BUNDLE) \
 		;) \
-	)
+	;)
 
 push:
 	docker push $(IMAGE_NAME)
