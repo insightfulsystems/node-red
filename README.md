@@ -1,6 +1,10 @@
 # node-red
 
-Multi-arch Node-RED containers based on the official images, and the followin gchangehs:
+```
+docker pull insightful/node-red:slim
+```
+
+Multi-arch Node-RED containers based on the official images, and the following changes:
 
 * Includes `git` to enable "projects"
 * Uses `yarn` for baking in native packages
