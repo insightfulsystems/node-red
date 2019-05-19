@@ -34,11 +34,8 @@
 	"node-red-node-sqlite": "*",
         "node-red-contrib-startup-trigger": "*",
 
-	"node-red-contrib-azure-table-storage": "*",
         "node-red-contrib-cognitive-services": "*",
         "node-red-contrib-exit": "*",
-        "node-red-contrib-persist": "*",
-        "node-red-contrib-startup-trigger": "*",
         "node-red-contrib-viseo-bot-message": "*",
         "node-red-contrib-viseo-botbuilder": "*",
         "node-red-contrib-viseo-credentials": "*",
