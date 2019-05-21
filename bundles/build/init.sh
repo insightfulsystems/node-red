@@ -17,4 +17,4 @@ chown $USER:$USER /data
 chown $USER:$USER /usr/src/node-red
 
 # CMD
-su -c "/usr/local/bin/npm start -- --userDir /data" -l $USER
+su -c "/usr/local/bin/npm start -- --userDir /data" -p $USER
