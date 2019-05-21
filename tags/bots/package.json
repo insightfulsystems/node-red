@@ -61,9 +61,6 @@
         "node-red-viseo-middleware": "*",
         "node-red-viseo-storage-plugin": "*"
     },
-    "optionalDependencies": {
-	"node-red-contrib-chatbot": "*"
-    },
     "engines": {
         "node": "10.*.*"
     }
