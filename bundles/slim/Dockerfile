@@ -9,7 +9,8 @@ RUN mkdir -p /usr/src/node-red \
  && apk add --no-cache \
     git \
     sudo \
-    shadow
+    shadow \
+    tzdata
 
 WORKDIR /usr/src/node-red
 
