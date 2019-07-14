@@ -18,7 +18,8 @@ RUN mkdir -p /usr/src/node-red \
     libgcc \
     linux-headers \
     make \
-    python 
+    python \
+    tzdata
 
 WORKDIR /usr/src/node-red
 
