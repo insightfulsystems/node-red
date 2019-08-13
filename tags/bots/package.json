@@ -42,7 +42,7 @@
         "node-red-contrib-viseo-file": "*",
         "node-red-contrib-viseo-help": "*",
         "node-red-contrib-viseo-jimp": "*",
-        "node-red-contrib-viseo-log": "~0.2",
+        "node-red-contrib-viseo-log": "~0.4",
         "node-red-contrib-viseo-loop": "*",
         "node-red-contrib-viseo-ms-graph": "*",
         "node-red-contrib-viseo-ms-oxford": "*",
