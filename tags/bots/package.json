@@ -24,7 +24,7 @@
         }
     ],
     "dependencies": {
-        "node-red": "0.20.8",
+        "node-red": "1.0.1",
         "node-red-node-msgpack": "*",
         "node-red-node-base64": "*",
         "node-red-node-suncalc": "*",
@@ -42,7 +42,7 @@
         "node-red-contrib-viseo-file": "*",
         "node-red-contrib-viseo-help": "*",
         "node-red-contrib-viseo-jimp": "*",
-        "node-red-contrib-viseo-log": "~0.4",
+        "node-red-contrib-viseo-log": "~0.6",
         "node-red-contrib-viseo-loop": "*",
         "node-red-contrib-viseo-ms-graph": "*",
         "node-red-contrib-viseo-ms-oxford": "*",
