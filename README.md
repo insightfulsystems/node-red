@@ -1,7 +1,7 @@
 # node-red
 
 ```
-docker pull insightful/node-red:slim-automation
+docker run -p 1880:1880 insightful/node-red:slim # or automation, or bots
 ```
 
 Multi-arch Node-RED containers based on the official images, and the following changes:
