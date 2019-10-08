@@ -22,27 +22,21 @@ matrix:
     - env: TAG=base       ARCH=amd64   BUNDLE=slim
     - env: TAG=base       ARCH=arm32v7 BUNDLE=slim
     - env: TAG=base       ARCH=arm32v6 BUNDLE=slim
-    - env: TAG=base       ARCH=arm64v8 BUNDLE=slim
     - env: TAG=base       ARCH=amd64   BUNDLE=build
     - env: TAG=base       ARCH=arm32v7 BUNDLE=build
     - env: TAG=base       ARCH=arm32v6 BUNDLE=build
-    - env: TAG=base       ARCH=arm64v8 BUNDLE=build
     - env: TAG=bots       ARCH=amd64   BUNDLE=slim
     - env: TAG=bots       ARCH=arm32v7 BUNDLE=slim
     - env: TAG=bots       ARCH=arm32v6 BUNDLE=slim
-    - env: TAG=bots       ARCH=arm64v8 BUNDLE=slim
     - env: TAG=bots       ARCH=amd64   BUNDLE=build
     - env: TAG=bots       ARCH=arm32v7 BUNDLE=build
     - env: TAG=bots       ARCH=arm32v6 BUNDLE=build
-    - env: TAG=bots       ARCH=arm64v8 BUNDLE=build
     - env: TAG=automation ARCH=amd64   BUNDLE=slim
     - env: TAG=automation ARCH=arm32v7 BUNDLE=slim
     - env: TAG=automation ARCH=arm32v6 BUNDLE=slim
-    - env: TAG=automation ARCH=arm64v8 BUNDLE=slim
     - env: TAG=automation ARCH=amd64   BUNDLE=build
     - env: TAG=automation ARCH=arm32v7 BUNDLE=build
     - env: TAG=automation ARCH=arm32v6 BUNDLE=build
-    - env: TAG=automation ARCH=arm64v8 BUNDLE=build
 
 script: 
    - travis_wait 60 make env
