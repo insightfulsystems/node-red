@@ -25,7 +25,7 @@
     ],
     "dependencies": {
         "node-red": "1.0.3",
-        "node-red-node-base64": "*",
+        "node-red-node-base64": "*"
     },
     "engines": {
         "node": "10.*.*"
