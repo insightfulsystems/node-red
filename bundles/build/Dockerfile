@@ -12,6 +12,7 @@ RUN mkdir -p /usr/src/node-red \
     sudo \
     shadow \
     binutils-gold \
+    iputils \
     curl \
     g++ \
     gcc \
@@ -36,15 +37,21 @@ RUN CXXFLAGS="-Wno-error=class-memaccess -Wno-error=ignored-qualifiers -Wno-erro
  && rm -rf /usr/src/node-red/.cache \
  && chmod +x /init
 
-# User configuration directory volume
-EXPOSE 1880
-
 # Environment variable holding file path for flows configuration
 ENV FLOWS=flows.json
 ENV NODE_PATH=/usr/src/node-red/node_modules:/data/node_modules
+
+# User configuration directory volume
+VOLUME ["/data"]
+
+# Expose the listening port of node-red
+EXPOSE 1880
 
 # Allow user to set uid/gid for Docker process
 ENV PGID=1000
 ENV PUID=1000
 
-CMD ["/init"]
+# Add a healthcheck (default every 30 secs)
+HEALTHCHECK CMD curl http://localhost:1880/ || exit 1
+
+ ENTRYPOINT ["/init"]
