@@ -7,6 +7,7 @@ FROM ${BASE}
 RUN mkdir -p /usr/src/node-red \
  && mkdir /data \
  && apk add --no-cache \
+    avahi \
     git \
     sudo \
     shadow \
@@ -21,6 +22,8 @@ ADD ./init.sh /init
 
 # This image includes the build tools but removes them after installing modules
 RUN apk add --no-cache --virtual .build-deps \
+        avahi-dev \
+        avahi-compat-libdns_sd \
         binutils-gold \
         curl \
         g++ \
