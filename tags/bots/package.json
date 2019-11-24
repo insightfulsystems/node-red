@@ -1,6 +1,6 @@
 {
-    "name": "node-red-insightful",
-    "version": "1.0.0",
+    "name": "node-red-insightful-bots",
+    "version": "1.0.3",
     "description": "A visual tool for wiring the Internet of Things",
     "homepage": "http://nodered.org",
     "license": "Apache-2.0",
@@ -29,11 +29,9 @@
         "node-red-node-base64": "*",
         "node-red-node-suncalc": "*",
         "node-red-node-random": "*",
-
         "node-red-dashboard": "*",
-	"node-red-node-sqlite": "*",
+        "node-red-node-sqlite": "*",
         "node-red-contrib-startup-trigger": "*",
-
         "node-red-contrib-cognitive-services": "*",
         "node-red-contrib-exit": "*",
         "node-red-contrib-viseo-bot-message": "*",
