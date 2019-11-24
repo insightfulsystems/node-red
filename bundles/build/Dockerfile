@@ -9,7 +9,6 @@ RUN mkdir -p /usr/src/node-red \
  && apk add --no-cache \
     avahi-compat-libdns_sd \
     git \
-    inotify-tools-dev \
     sudo \
     shadow \
     binutils-gold \

@@ -23,7 +23,6 @@ ADD ./init.sh /init
 RUN apk add --no-cache --virtual .build-deps \
         avahi-dev \
         avahi-compat-libdns_sd \
-        inotify-tools-dev \
         binutils-gold \
         curl \
         g++ \
