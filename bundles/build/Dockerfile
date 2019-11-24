@@ -7,6 +7,7 @@ FROM ${BASE}
 RUN mkdir -p /usr/src/node-red \
  && mkdir /data \
  && apk add --no-cache \
+    avahi-dev \
     avahi-compat-libdns_sd \
     git \
     sudo \
