@@ -52,7 +52,7 @@
         "node-red-node-smooth": "0.1.2",
         "node-red-node-sqlite": "0.4.1",
         "node-red-node-ui-table": "0.1.5",
-        "node-red-node-wol": "0.0.12",
+        "node-red-node-wol": "0.1.0",
         "node-red": "1.0.3"
     },
     "engines": {
