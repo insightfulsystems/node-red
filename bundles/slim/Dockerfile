@@ -41,8 +41,6 @@ RUN apk add --no-cache --virtual .build-deps \
  && apk del .build-deps \
  && chmod +x /init
 
-USER node
-
 # Environment variable holding file path for flows configuration
 ENV FLOWS=flows.json
 ENV NODE_PATH=/usr/src/node-red/node_modules:/data/node_modules
