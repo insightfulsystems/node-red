@@ -1,6 +1,6 @@
 {
     "name": "node-red-insightful-bots",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "description": "A visual tool for wiring the Internet of Things",
     "homepage": "http://nodered.org",
     "license": "Apache-2.0",
@@ -24,7 +24,7 @@
         }
     ],
     "dependencies": {
-        "node-red": "1.0.3",
+        "node-red": "1.0.4",
         "node-red-node-msgpack": "*",
         "node-red-node-base64": "*",
         "node-red-node-suncalc": "*",
