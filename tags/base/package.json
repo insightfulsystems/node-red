@@ -28,6 +28,6 @@
         "node-red-node-base64": "*"
     },
     "engines": {
-        "node": "10.*.*"
+        "node": "12.*.*"
     }
 }

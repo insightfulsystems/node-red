@@ -60,6 +60,6 @@
         "node-red-viseo-storage-plugin": "*"
     },
     "engines": {
-        "node": "10.*.*"
+        "node": "12.*.*"
     }
 }

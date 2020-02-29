@@ -85,7 +85,7 @@ manifest:
 	$(foreach arch, $(TARGET_ARCHITECTURES), \
 		docker manifest annotate \
 			$(IMAGE_NAME):latest \
-			$(IMAGE_NAME):slim-base-$(arch) $(shell make expand-$(arch));)
+			$(IMAGE_NAME):slim-base-$(arch) $(shell make -s expand-$(arch));)
 	docker manifest push $(IMAGE_NAME):latest
 
 local-push-arm32v7:
