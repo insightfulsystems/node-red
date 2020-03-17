@@ -72,11 +72,14 @@ manifest:
 	$(foreach BUNDLE, $(BUNDLES), \
 		docker manifest create --amend \
 			$(IMAGE_NAME):$(BUNDLE) \
-			$(foreach ARCH, $(TARGET_ARCHITECTURES), $(IMAGE_NAME):$(BUNDLE)-base-$(ARCH)); \
+			$(foreach ARCH, $(TARGET_ARCHITECTURES), \
+				$(foreach TAG, $(TAGS), 
+					$(IMAGE_NAME):$(BUNDLE)-$(TAG)-$(ARCH))); \
 		$(foreach arch, $(TARGET_ARCHITECTURES), \
 		docker manifest annotate \
 			$(IMAGE_NAME):$(BUNDLE) \
-			$(IMAGE_NAME):$(BUNDLE)-base-$(arch) $(shell make expand-$(arch));) \
+			$(foreach TAG, $(TAGS), 
+				$(IMAGE_NAME):$(BUNDLE)-$(TAG)-$(arch) $(shell make expand-$(arch));)) \
 		docker manifest push $(IMAGE_NAME):$(BUNDLE) \
 	;)
 	docker manifest create --amend \
