@@ -24,7 +24,7 @@
         }
     ],
     "dependencies": {
-        "node-red": "1.0.4",
+        "node-red": "^1.0.4",
         "node-red-node-msgpack": "*",
         "node-red-node-base64": "*",
         "node-red-node-suncalc": "*",
@@ -34,30 +34,7 @@
         "node-red-contrib-startup-trigger": "*",
         "node-red-contrib-cognitive-services": "*",
         "node-red-contrib-exit": "*",
-        "node-red-contrib-viseo-bot-message": "*",
-        "node-red-contrib-viseo-botbuilder": "*",
-        "node-red-contrib-viseo-credentials": "*",
-        "node-red-contrib-viseo-file": "*",
-        "node-red-contrib-viseo-help": "*",
-        "node-red-contrib-viseo-jimp": "*",
-        "node-red-contrib-viseo-log": "~0.6",
-        "node-red-contrib-viseo-loop": "*",
-        "node-red-contrib-viseo-ms-graph": "*",
-        "node-red-contrib-viseo-ms-oxford": "*",
-        "node-red-contrib-viseo-nedb": "*",
-        "node-red-contrib-viseo-nosql": "*",
-        "node-red-contrib-viseo-nosql-manager": "*",
-        "node-red-contrib-viseo-qrcode": "*",
-        "node-red-contrib-viseo-random": "*",
-        "node-red-contrib-viseo-repeat": "*",
-        "node-red-contrib-viseo-sensit": "*",
-        "node-red-contrib-viseo-socketio": "*",
-        "node-red-contrib-viseo-soundex": "*",
-        "node-red-contrib-viseo-tokenizer": "*",
-        "node-red-viseo-bot-manager": "*",
-        "node-red-viseo-helper": "*",
-        "node-red-viseo-middleware": "*",
-        "node-red-viseo-storage-plugin": "*"
+        "node-red-contrib-chatbot": "~0.18.15"
     },
     "engines": {
         "node": "12.*.*"
