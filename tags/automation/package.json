@@ -43,7 +43,7 @@
         "node-red-contrib-wemo-emulator": "1.0.0",
         "node-red-dashboard": "2.19.4",
         "node-red-node-base64": "0.2.0",
-        "node-red-node-daemon": "0.0.25",
+        "node-red-node-daemon": "0.1.0",
         "node-red-node-discovery": "0.0.22",
         "node-red-node-feedparser": "0.1.15",
         "node-red-node-ui-list": "0.2.5",
