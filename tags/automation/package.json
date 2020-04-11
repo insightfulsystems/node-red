@@ -26,7 +26,7 @@
     "dependencies": {
         "node-red-admin": "0.1.5",
         "node-red-contrib-advanced-ping": "1.2.0",
-        "node-red-contrib-amazon-echo": "0.1.9",
+        "node-red-contrib-amazon-echo": "0.1.10",
         "node-red-contrib-broadlink-control": "2.0.0",
         "node-red-contrib-cast": "0.2.14",
         "node-red-contrib-homebridge-automation": "0.0.54",
