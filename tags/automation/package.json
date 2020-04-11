@@ -1,6 +1,6 @@
 {
     "name": "node-red-insightful-automation",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "description": "A visual tool for wiring the Internet of Things",
     "homepage": "http://nodered.org",
     "license": "Apache-2.0",
@@ -27,10 +27,10 @@
         "node-red-admin": "0.1.5",
         "node-red-contrib-advanced-ping": "1.2.0",
         "node-red-contrib-amazon-echo": "0.1.9",
-        "node-red-contrib-broadlink-control": "1.0.6",
+        "node-red-contrib-broadlink-control": "2.0.0",
         "node-red-contrib-cast": "0.2.14",
         "node-red-contrib-homebridge-automation": "0.0.54",
-        "node-red-contrib-homekit-bridged": "1.0.1",
+        "node-red-contrib-homekit-bridged": "1.0.4",
         "node-red-contrib-httpauth": "1.0.12",
         "node-red-contrib-lgtv": "1.1.0",
         "node-red-contrib-light-scheduler": "0.0.15",
@@ -42,18 +42,18 @@
         "node-red-contrib-ssdp-discover": "0.0.2",
         "node-red-contrib-wemo-emulator": "1.0.0",
         "node-red-dashboard": "2.19.4",
-        "node-red-node-base64": "0.2.0",
+        "node-red-node-base64": "0.2.1",
         "node-red-node-daemon": "0.1.0",
         "node-red-node-discovery": "0.0.22",
         "node-red-node-feedparser": "0.1.15",
         "node-red-node-ui-list": "0.2.5",
-        "node-red-node-msgpack": "1.2.0",
+        "node-red-node-msgpack": "1.2.1",
         "node-red-node-prowl": "0.0.10",
         "node-red-node-smooth": "0.1.2",
-        "node-red-node-sqlite": "0.4.2",
+        "node-red-node-sqlite": "0.4.3",
         "node-red-node-ui-table": "0.2.2",
         "node-red-node-wol": "0.1.0",
-        "node-red": "1.0.4"
+        "node-red": "1.0.5"
     },
     "engines": {
         "node": "12.*.*"
