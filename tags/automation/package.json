@@ -29,7 +29,7 @@
         "node-red-contrib-amazon-echo": "0.1.10",
         "node-red-contrib-broadlink-control": "2.0.0",
         "node-red-contrib-cast": "0.2.15",
-        "node-red-contrib-homebridge-automation": "0.0.54",
+        "node-red-contrib-homebridge-automation": "0.0.59",
         "node-red-contrib-homekit-bridged": "1.0.4",
         "node-red-contrib-httpauth": "1.0.12",
         "node-red-contrib-lgtv": "1.1.0",
