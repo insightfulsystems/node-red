@@ -27,7 +27,7 @@
         "node-red": "1.0.5",
         "deep-extend": "^0.6.0",
         "moment-timezone": "^0.5.11",
-        "uuid": "^3.1.0",
+        "uuid": "^7.0.3",
         "xmldom": "^0.1.27",
         "xpath": "^0.0.24",
         "node-red-contrib-viseo-bot-message": "0.8.1",
