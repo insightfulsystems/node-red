@@ -24,7 +24,7 @@
         }
     ],
     "dependencies": {
-        "node-red-admin": "0.1.5",
+        "node-red-admin": "0.2.4",
         "node-red-contrib-advanced-ping": "1.2.0",
         "node-red-contrib-amazon-echo": "0.1.10",
         "node-red-contrib-broadlink-control": "2.0.1",
