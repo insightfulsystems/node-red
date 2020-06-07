@@ -33,7 +33,7 @@ RUN apk add --no-cache --virtual .build-deps \
         libgcc \
         linux-headers \
         make \
-        python \
+        python2 \
  && CXXFLAGS="-Wno-error=class-memaccess -Wno-error=ignored-qualifiers -Wno-error=stringop-truncation" \
     CFLAGS="-Wno-error=class-memaccess -Wno-error=ignored-qualifiers -Wno-error=stringop-truncation" \
     yarn install \

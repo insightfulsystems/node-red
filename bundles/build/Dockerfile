@@ -21,7 +21,7 @@ RUN mkdir -p /usr/src/node-red \
     libgcc \
     linux-headers \
     make \
-    python \
+    python2 \
     tzdata
 
 WORKDIR /usr/src/node-red

@@ -98,6 +98,8 @@ local-push-arm32v7:
 	;)
 	docker push $(PRIVATE_REGISTRY)/$(IMAGE_NAME)
 
+all: qemu node-red push manifest
+
 test:
 	docker run \
 		-p 1880:1880 \
