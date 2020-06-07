@@ -6,7 +6,7 @@ export BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"`
 export TAG_DATE=`date -u +"%Y%m%d"`
 export BUILD_IMAGE_NAME=insightful/alpine-node
 export NODE_MAJOR_VERSION=12
-export TARGET_ARCHITECTURES=amd64 arm32v7 arm32v6
+export TARGET_ARCHITECTURES=amd64 arm32v7 arm32v6 arm64v8
 export TAGS=base bots automation
 export BUNDLES=slim build
 export BUNDLE?=slim
@@ -70,25 +70,18 @@ expand-%: # expand architecture variants for manifest
 
 manifest:
 	$(foreach BUNDLE, $(BUNDLES), \
-		docker manifest create --amend \
-			$(IMAGE_NAME):$(BUNDLE) \
-			$(foreach ARCH, $(TARGET_ARCHITECTURES), \
-				$(foreach TAG, $(TAGS), 
-					$(IMAGE_NAME):$(BUNDLE)-$(TAG)-$(ARCH))); \
-		$(foreach arch, $(TARGET_ARCHITECTURES), \
-		docker manifest annotate \
-			$(IMAGE_NAME):$(BUNDLE) \
-			$(foreach TAG, $(TAGS), 
-				$(IMAGE_NAME):$(BUNDLE)-$(TAG)-$(arch) $(shell make expand-$(arch));)) \
-		docker manifest push $(IMAGE_NAME):$(BUNDLE) \
-	;)
-	docker manifest create --amend \
-		$(IMAGE_NAME):latest \
+		docker manifest create --amend $(IMAGE_NAME):$(BUNDLE) \
+			$(foreach ARCH, $(TARGET_ARCHITECTURES), $(IMAGE_NAME):$(BUNDLE)-base-$(ARCH)); \
+		 $(foreach arch, $(TARGET_ARCHITECTURES), \
+			docker manifest annotate $(IMAGE_NAME):$(BUNDLE) \
+				$(IMAGE_NAME):$(BUNDLE)-base-$(arch) $(shell make expand-$(arch));) \
+	       	docker manifest push $(IMAGE_NAME):$(BUNDLE) \
+	;) 
+	docker manifest create --amend $(IMAGE_NAME):latest \
 		$(foreach ARCH, $(TARGET_ARCHITECTURES), $(IMAGE_NAME):slim-base-$(ARCH))
 	$(foreach arch, $(TARGET_ARCHITECTURES), \
-		docker manifest annotate \
-			$(IMAGE_NAME):latest \
-			$(IMAGE_NAME):slim-base-$(arch) $(shell make -s expand-$(arch));)
+		docker manifest annotate $(IMAGE_NAME):latest \
+	       		$(IMAGE_NAME):slim-base-$(arch) $(shell make expand-$(arch));)
 	docker manifest push $(IMAGE_NAME):latest
 
 local-push-arm32v7:
