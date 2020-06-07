@@ -51,6 +51,7 @@ tag-%:
 	)
 
 push:
+	docker tag $(IMAGE_NAME):slim-base $(IMAGE_NAME):latest
 	docker push $(IMAGE_NAME)
 
 push-%:
@@ -104,3 +105,6 @@ clean:
 	-docker rmi -f $(BUILD_IMAGE_NAME)
 	-docker rmi -f $$(docker images --format '{{.Repository}}:{{.Tag}}' | grep $(IMAGE_NAME))
 
+nuke-everything-from-orbit:
+	-docker rm -vf $$(docker ps -a -q)
+	-docker rmi -f $$(docker images -a -q)
