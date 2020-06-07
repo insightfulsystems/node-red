@@ -17,4 +17,3 @@ Multi-arch Node-RED containers based on the official images, and the following c
 * Uses `yarn` for baking in native packages
 * The `slim` tag strips out build tools for smaller containers
 * The `build` tag includes build tools in the container
-* `arm64v8` is not currently built, since it takes too long for the free tier in Travis CI to complete -- this will be addressed soon.
