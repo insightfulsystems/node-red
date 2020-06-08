@@ -51,7 +51,6 @@ tag-%:
 	)
 
 push:
-	docker tag $(IMAGE_NAME):slim-base $(IMAGE_NAME):latest
 	docker push $(IMAGE_NAME)
 
 push-%:
