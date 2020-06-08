@@ -36,13 +36,11 @@ RUN CXXFLAGS="-Wno-error=class-memaccess -Wno-error=ignored-qualifiers -Wno-erro
     CFLAGS="-Wno-error=class-memaccess -Wno-error=ignored-qualifiers -Wno-error=stringop-truncation" \
     yarn install \
  && rm -rf /usr/src/node-red/.cache \
- && chmod +x /init \
- && npm config set prefix /data \
- && yarn config set prefix /data 
+ && chmod +x /init
 
 # Environment variable holding file path for flows configuration
 ENV FLOWS=flows.json
-ENV NODE_PATH=/data/node_modules:/usr/src/node-red/node_modules
+ENV NODE_PATH=/usr/src/node-red/node_modules:/data/node_modules
 
 # User configuration directory volume
 VOLUME ["/data"]
@@ -57,4 +55,4 @@ ENV PUID=1000
 # Add a healthcheck (default every 30 secs)
 HEALTHCHECK CMD curl http://localhost:1880/ || exit 1
 
- ENTRYPOINT ["/init"]
+ENTRYPOINT ["/init"]

@@ -39,13 +39,11 @@ RUN apk add --no-cache --virtual .build-deps \
     yarn install \
  && rm -rf /usr/local/share/.cache \
  && apk del .build-deps \
- && chmod +x /init \
- && npm config set prefix /data \
- && yarn config set prefix /data
+ && chmod +x /init
 
 # Environment variable holding file path for flows configuration
 ENV FLOWS=flows.json
-ENV NODE_PATH=/data/node_modules:/usr/src/node-red/node_modules
+ENV NODE_PATH=/usr/src/node-red/node_modules:/data/node_modules
 
 # User configuration directory volume
 VOLUME ["/data"]
