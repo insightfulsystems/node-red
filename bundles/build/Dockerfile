@@ -22,7 +22,9 @@ RUN mkdir -p /usr/src/node-red \
     linux-headers \
     make \
     python2 \
-    tzdata
+    tzdata \
+    openssl \
+    openssh-client
 
 WORKDIR /usr/src/node-red
 
@@ -36,11 +38,15 @@ RUN CXXFLAGS="-Wno-error=class-memaccess -Wno-error=ignored-qualifiers -Wno-erro
     CFLAGS="-Wno-error=class-memaccess -Wno-error=ignored-qualifiers -Wno-error=stringop-truncation" \
     yarn install \
  && rm -rf /usr/src/node-red/.cache \
- && chmod +x /init
+ && chmod +x /init \
+ && chown -R 1000:1000 /usr/src/node-red /data \
+ && chmod -R g+rwX /usr/src/node-red /data
 
 # Environment variable holding file path for flows configuration
-ENV FLOWS=flows.json
-ENV NODE_PATH=/usr/src/node-red/node_modules:/data/node_modules
+ENV FLOWS=flows.json \
+    NODE_PATH=/usr/src/node-red/node_modules:/data/node_modules \
+    NODE_RED_ENABLE_PROJECTS=true
+
 
 # User configuration directory volume
 VOLUME ["/data"]

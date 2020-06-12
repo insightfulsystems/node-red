@@ -13,7 +13,9 @@ RUN mkdir -p /usr/src/node-red \
     shadow \
     iputils \
     curl \
-    tzdata
+    tzdata \
+    openssl \
+    openssh-client 
 
 WORKDIR /usr/src/node-red
 
@@ -39,16 +41,19 @@ RUN apk add --no-cache --virtual .build-deps \
     yarn install \
  && rm -rf /usr/local/share/.cache \
  && apk del .build-deps \
- && chmod +x /init
+ && chmod +x /init \
+ && chown -R 1000:1000 /usr/src/node-red /data \
+ && chmod -R g+rwX /usr/src/node-red /data
 
 # Environment variable holding file path for flows configuration
-ENV FLOWS=flows.json
-ENV NODE_PATH=/usr/src/node-red/node_modules:/data/node_modules
+ENV FLOWS=flows.json \
+    NODE_PATH=/usr/src/node-red/node_modules:/data/node_modules \
+    NODE_RED_ENABLE_PROJECTS=true
 
 # User configuration directory volume
 VOLUME ["/data"]
 
-# Expose the listening port of node-red
+# Expose the default Node-RED listening port
 EXPOSE 1880
 
 # Allow user to set uid/gid for Docker process
