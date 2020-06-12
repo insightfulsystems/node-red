@@ -42,23 +42,31 @@ RUN CXXFLAGS="-Wno-error=class-memaccess -Wno-error=ignored-qualifiers -Wno-erro
  && chown -R 1000:1000 /usr/src/node-red /data \
  && chmod -R g+rwX /usr/src/node-red /data
 
-# Environment variable holding file path for flows configuration
+# Environment variables for configuration
 ENV FLOWS=flows.json \
     NODE_PATH=/usr/src/node-red/node_modules:/data/node_modules \
-    NODE_RED_ENABLE_PROJECTS=true
-
+    NODE_RED_ENABLE_PROJECTS=true \
+    PGID=1000 \
+    PUID=1000
 
 # User configuration directory volume
 VOLUME ["/data"]
 
-# Expose the listening port of node-red
+# Expose Node-RED port
 EXPOSE 1880
-
-# Allow user to set uid/gid for Docker process
-ENV PGID=1000
-ENV PUID=1000
 
 # Add a healthcheck (default every 30 secs)
 HEALTHCHECK CMD curl http://localhost:1880/ || exit 1
 
 ENTRYPOINT ["/init"]
+
+ARG BUILD_DATE
+ARG VCS_REF
+ARG VCS_URL
+ARG ARCH
+LABEL \
+    org.label-schema.build-date=${BUILD_DATE} \
+    org.label-schema.name="Node-RED" \
+    org.label-schema.vcs-ref=${VCS_REF} \
+    org.label-schema.vcs-url=${VCS_URL} \
+    org.label-schema.arch=${ARCH}

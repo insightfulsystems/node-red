@@ -23,9 +23,10 @@ qemu:
 	-docker run --rm --privileged multiarch/qemu-user-static:register --reset
 
 env:
-	echo "\n\n\n*** Building $(BUNDLE) $(TAG) for $(ARCH) ***\n\n\n" && \
+	echo -e "\n\n\n*** Building $(BUNDLE) $(TAG) for $(ARCH) ***\n\n\n" && \
 	cp tags/$(TAG)/package.json bundles/$(BUNDLE)/package.json && \
-	docker build --build-arg BUILD_DATE=$(BUILD_DATE) \
+	docker build \
+		--build-arg BUILD_DATE=$(BUILD_DATE) \
 		--build-arg ARCH=$(ARCH) \
 		--build-arg BASE=$(BUILD_IMAGE_NAME):$(NODE_MAJOR_VERSION)-$(ARCH) \
 		--build-arg VCS_REF=$(VCS_REF) \
@@ -39,9 +40,10 @@ tag-%:
 	$(eval TAG := $*)
 	$(foreach ARCH, $(TARGET_ARCHITECTURES), \
 		$(foreach BUNDLE, $(BUNDLES), \
-			echo "\n\n\n*** Building $(BUNDLE) $(TAG) for $(ARCH) ***\n\n\n" && \
+			echo -e "\n\n\n*** Building $(BUNDLE) $(TAG) for $(ARCH) ***\n\n\n" && \
 			cp tags/$(TAG)/package.json bundles/$(BUNDLE)/package.json && \
-			docker build --build-arg BUILD_DATE=$(BUILD_DATE) \
+			docker build \
+				--build-arg BUILD_DATE=$(BUILD_DATE) \
 				--build-arg ARCH=$(ARCH) \
 				--build-arg BASE=$(BUILD_IMAGE_NAME):$(NODE_MAJOR_VERSION)-$(ARCH) \
 				--build-arg VCS_REF=$(VCS_REF) \
