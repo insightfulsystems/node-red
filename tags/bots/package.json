@@ -53,7 +53,9 @@
         "node-red-viseo-bot-manager": "0.1.0",
         "node-red-viseo-helper": "~0.3.2",
         "node-red-viseo-middleware": "~0.2.3",
-        "node-red-viseo-storage-plugin": "~1.0.2"
+        "node-red-viseo-storage-plugin": "~1.0.2",
+	"@node-red-contrib-themes/midnight-red": "1.4.0"
+
     },
     "node-red-catalog": {
         "node-red-contrib-viseo-airtable": "~0.1.3",
