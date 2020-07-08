@@ -1,6 +1,6 @@
 {
     "name": "node-red-insightful-automation",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "description": "A visual tool for wiring the Internet of Things",
     "homepage": "http://nodered.org",
     "license": "Apache-2.0",
@@ -54,7 +54,7 @@
         "node-red-node-ui-table": "0.3.1",
         "node-red-node-wol": "0.1.0",
 	"@node-red-contrib-themes/midnight-red": "1.4.0",
-        "node-red": "1.1.0"
+        "node-red": "1.1.1"
     },
     "engines": {
         "node": "12.*.*"
