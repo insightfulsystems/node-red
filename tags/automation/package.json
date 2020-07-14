@@ -33,7 +33,7 @@
         "node-red-contrib-homekit-bridged": "1.1.2",
         "node-red-contrib-httpauth": "1.0.12",
         "node-red-contrib-lgtv": "1.1.0",
-        "node-red-contrib-light-scheduler": "0.0.15",
+        "node-red-contrib-light-scheduler": "0.0.16",
         "node-red-contrib-meobox": "1.0.0",
         "node-red-contrib-moment": "3.0.3",
         "node-red-contrib-msg-speed": "0.0.5",
