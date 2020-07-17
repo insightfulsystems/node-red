@@ -53,7 +53,7 @@
         "node-red-node-sqlite": "0.4.3",
         "node-red-node-ui-table": "0.3.1",
         "node-red-node-wol": "0.1.0",
-	"@node-red-contrib-themes/midnight-red": "1.4.2",
+	"@node-red-contrib-themes/midnight-red": "1.4.3",
         "node-red": "1.1.2"
     },
     "engines": {
