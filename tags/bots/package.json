@@ -36,7 +36,7 @@
         "node-red-node-feedparser": "0.1.16",
         "node-red-node-ui-list": "0.3.2",
         "node-red-node-smooth": "0.1.2",
-        "node-red-node-sqlite": "0.4.3",
+        "node-red-node-sqlite": "0.4.4",
         "node-red-node-ui-table": "0.3.4",
 	"node-red-contrib-chatbot": "0.19.7",
 	"@node-red-contrib-themes/midnight-red": "1.4.4",
