@@ -26,11 +26,11 @@ RUN set -ex \
 WORKDIR /usr/src/node-red
 
 # package.json contains Node-RED NPM module and node dependencies
-COPY ../common/package.json .
+COPY common/package.json .
 # flows.json contains a simple warning to users in case they forget to mount /data
-COPY ../common/flows.json /data
+COPY common/flows.json /data
 # A minimalist init script
-COPY ../common/init.sh /initt
+COPY common/init.sh /init
 
 ### STAGE build ###
 FROM base AS build
@@ -41,7 +41,7 @@ RUN apk add --no-cache --virtual \
     build-base \
     linux-headers \
     udev \
-    python \
+    python3 \
  && CXXFLAGS="-Wno-error=class-memaccess -Wno-error=ignored-qualifiers -Wno-error=stringop-truncation" \
     CFLAGS="-Wno-error=class-memaccess -Wno-error=ignored-qualifiers -Wno-error=stringop-truncation" \
     yarn install --unsafe-perm --no-update-notifier --no-fund --only=production \

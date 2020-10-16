@@ -13,6 +13,7 @@ RUN set -ex \
     shadow \
     iputils \
     curl \
+    sudo \
     tzdata \
     openssl \
     openssh-client \
@@ -26,11 +27,11 @@ RUN set -ex \
 WORKDIR /usr/src/node-red
 
 # package.json contains Node-RED NPM module and node dependencies
-COPY ../common/package.json .
+COPY common/package.json .
 # flows.json contains a simple warning to users in case they forget to mount /data
-COPY ../common/flows.json /data
+COPY common/flows.json /data
 # A minimalist init script
-COPY ../common/init.sh /init
+COPY common/init.sh /init
 
 ### STAGE build ###
 FROM base AS build
@@ -41,7 +42,7 @@ RUN apk add --no-cache --virtual \
     build-base \
     linux-headers \
     udev \
-    python \
+    python3 \
  && CXXFLAGS="-Wno-error=class-memaccess -Wno-error=ignored-qualifiers -Wno-error=stringop-truncation" \
     CFLAGS="-Wno-error=class-memaccess -Wno-error=ignored-qualifiers -Wno-error=stringop-truncation" \
     yarn install --unsafe-perm --no-update-notifier --no-fund --only=production \
@@ -58,6 +59,19 @@ ARG VCS_REF
 ARG VCS_URL
 
 COPY --from=build /usr/src/node-red/prod_node_modules ./node_modules
+
+RUN mkdir -p /usr/src/node-red \
+ && mkdir /data \
+ && apk add --no-cache --virtual \    
+    avahi-dev \
+    binutils-gold \
+    build-base \
+    devtools \ 
+    gnupg \
+    linux-headers \
+    make \
+    python3 \
+    udev 
 
 ENV \
     FLOWS=flows.json \
@@ -94,81 +108,3 @@ LABEL \
     org.label-schema.vcs-url=${VCS_URL} \
     org.label-schema.version=${BUILD_VERSION} \
     org.label-schema.build-date=${BUILD_DATE} \
-
-
-
-ARG BASE
-FROM ${BASE}
-
-# Home directory for Node-RED application source code.
-# /data directory, contains flows, config and nodes.
-# This image includes the build tools permanently
-RUN mkdir -p /usr/src/node-red \
- && mkdir /data \
- && apk add --no-cache \
-    avahi-dev \
-    avahi-compat-libdns_sd \
-    devtools \
-    git \
-    sudo \
-    shadow \
-    binutils-gold \
-    iputils \
-    curl \
-    g++ \
-    gcc \
-    gnupg \
-    libgcc \
-    linux-headers \
-    make \
-    python \
-    python2 \
-    tzdata \
-    udev \
-    openssl \
-    openssh-client
-
-WORKDIR /usr/src/node-red
-
-# package.json contains Node-RED NPM module and node dependencies
-COPY ./package.json /usr/src/node-red/
-# Add our minimalist init script
-ADD ./init.sh /init
-
-# Set C compiler flags to work around grpc compile errors in ARM
-RUN CXXFLAGS="-Wno-error=class-memaccess -Wno-error=ignored-qualifiers -Wno-error=stringop-truncation" \
-    CFLAGS="-Wno-error=class-memaccess -Wno-error=ignored-qualifiers -Wno-error=stringop-truncation" \
-    yarn install \
- && rm -rf /usr/src/node-red/.cache \
- && chmod +x /init \
- && chown -R 1000:1000 /usr/src/node-red /data \
- && chmod -R g+rwX /usr/src/node-red /data
-
-# Environment variables for configuration
-ENV FLOWS=flows.json \
-    NODE_PATH=/usr/src/node-red/node_modules:/data/node_modules \
-    NODE_RED_ENABLE_PROJECTS=true \
-    PGID=1000 \
-    PUID=1000
-
-# User configuration directory volume
-VOLUME ["/data"]
-
-# Expose Node-RED port
-EXPOSE 1880
-
-# Add a healthcheck (default every 30 secs)
-HEALTHCHECK CMD curl http://localhost:1880/ || exit 1
-
-ENTRYPOINT ["/init"]
-
-ARG BUILD_DATE
-ARG VCS_REF
-ARG VCS_URL
-ARG ARCH
-LABEL \
-    org.label-schema.build-date=${BUILD_DATE} \
-    org.label-schema.name="Node-RED" \
-    org.label-schema.vcs-ref=${VCS_REF} \
-    org.label-schema.vcs-url=${VCS_URL} \
-    org.label-schema.arch=${ARCH}
