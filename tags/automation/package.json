@@ -46,7 +46,7 @@
         "node-red-node-daemon": "0.1.2",
         "node-red-node-discovery": "0.0.22",
         "node-red-node-feedparser": "0.1.16",
-        "node-red-node-ui-list": "0.3.2",
+        "node-red-node-ui-list": "0.3.3",
         "node-red-node-msgpack": "1.2.1",
         "node-red-node-prowl": "0.0.10",
         "node-red-node-smooth": "0.1.2",
