@@ -23,8 +23,9 @@ qemu:
 	-docker run --rm --privileged multiarch/qemu-user-static:register --reset
 
 env:
-	echo -e "\n\n\n*** Building $(BUNDLE) $(TAG) for $(ARCH) ***\n\n\n" && \
-	cp tags/$(TAG)/package.json bundles/$(BUNDLE)/package.json && \
+	echo -e "\n\n\n*** Building $(BUNDLE) $(TAG) for $(ARCH) ***\n\n" && \
+	cp -a bundles/common bundles/$(BUNDLE) && \
+	cp tags/$(TAG)/package.json bundles/$(BUNDLE)/common/package.json && \
 	docker build \
 		--build-arg BUILD_DATE=$(BUILD_DATE) \
 		--build-arg ARCH=$(ARCH) \
@@ -41,14 +42,16 @@ tag-%:
 	$(foreach ARCH, $(TARGET_ARCHITECTURES), \
 		$(foreach BUNDLE, $(BUNDLES), \
 			echo -e "\n\n\n*** Building $(BUNDLE) $(TAG) for $(ARCH) ***\n\n\n" && \
-			cp tags/$(TAG)/package.json bundles/$(BUNDLE)/package.json && \
+			cp -a bundles/common bundles/$(BUNDLE) && \
+			cp tags/$(TAG)/package.json bundles/$(BUNDLE)/common/package.json && \
 			docker build \
 				--build-arg BUILD_DATE=$(BUILD_DATE) \
 				--build-arg ARCH=$(ARCH) \
 				--build-arg BASE=$(BUILD_IMAGE_NAME):$(NODE_MAJOR_VERSION)-$(ARCH) \
 				--build-arg VCS_REF=$(VCS_REF) \
 				--build-arg VCS_URL=$(VCS_URL) \
-				-t $(IMAGE_NAME):$(BUNDLE)-$(TAG)-$(ARCH) bundles/$(BUNDLE) \
+				-t $(IMAGE_NAME):$(BUNDLE)-$(TAG)-$(ARCH) bundles/$(BUNDLE) && \
+			rm -rf bundles/$(BUNDLE)/common \
 		;) \
 	)
 
@@ -101,6 +104,10 @@ test:
 		-ti $(IMAGE_NAME):$(BUNDLE)-$(TAG)-$(ARCH)
 
 clean:
+	-rm -rf ./tmp
+	-$(foreach BUNDLE, $(BUNDLES), \
+		rm -rf bundles/$(BUNDLE)/common \
+	;)
 	-docker rm -fv $$(docker ps -a -q -f status=exited)
 	-docker rmi -f $$(docker images -q -f dangling=true)
 	-docker rmi -f $(BUILD_IMAGE_NAME)
