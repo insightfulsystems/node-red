@@ -23,8 +23,9 @@ qemu:
 	-docker run --rm --privileged multiarch/qemu-user-static:register --reset
 
 env:
-	echo -e "\n\n\n*** Building $(BUNDLE) $(TAG) for $(ARCH) ***\n\n\n" && \
-	cp tags/$(TAG)/package.json bundles/$(BUNDLE)/package.json && \
+	echo -e "\n\n\n*** Building $(BUNDLE) $(TAG) for $(ARCH) ***\n\n" && \
+	cp -a bundles/common bundles/$(BUNDLE) && \
+	cp tags/$(TAG)/package.json bundles/$(BUNDLE)/common/package.json && \
 	docker build \
 		--build-arg BUILD_DATE=$(BUILD_DATE) \
 		--build-arg ARCH=$(ARCH) \
@@ -42,7 +43,7 @@ tag-%:
 		$(foreach BUNDLE, $(BUNDLES), \
 			echo -e "\n\n\n*** Building $(BUNDLE) $(TAG) for $(ARCH) ***\n\n\n" && \
 			cp -a bundles/common bundles/$(BUNDLE) && \
-			cp tags/$(TAG)/package.json bundles/$(BUNDLE)/package.json && \
+			cp tags/$(TAG)/package.json bundles/$(BUNDLE)/common/package.json && \
 			docker build \
 				--build-arg BUILD_DATE=$(BUILD_DATE) \
 				--build-arg ARCH=$(ARCH) \
@@ -103,7 +104,8 @@ test:
 		-ti $(IMAGE_NAME):$(BUNDLE)-$(TAG)-$(ARCH)
 
 clean:
-	$(foreach BUNDLE, $(BUNDLES), \
+	-rm -rf ./tmp
+	-$(foreach BUNDLE, $(BUNDLES), \
 		rm -rf bundles/$(BUNDLE)/common \
 	;)
 	-docker rm -fv $$(docker ps -a -q -f status=exited)

@@ -40,8 +40,9 @@ RUN apk add --no-cache --virtual \
     buildtools \
     build-base \
     linux-headers \
-    udev \
     python3 \
+    sqlite \
+    udev \
  && CXXFLAGS="-Wno-error=class-memaccess -Wno-error=ignored-qualifiers -Wno-error=stringop-truncation" \
     CFLAGS="-Wno-error=class-memaccess -Wno-error=ignored-qualifiers -Wno-error=stringop-truncation" \
     yarn install --unsafe-perm --no-update-notifier --no-fund --only=production \

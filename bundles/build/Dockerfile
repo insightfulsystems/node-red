@@ -41,8 +41,9 @@ RUN apk add --no-cache --virtual \
     buildtools \
     build-base \
     linux-headers \
-    udev \
     python3 \
+    sqlite \
+    udev \
  && CXXFLAGS="-Wno-error=class-memaccess -Wno-error=ignored-qualifiers -Wno-error=stringop-truncation" \
     CFLAGS="-Wno-error=class-memaccess -Wno-error=ignored-qualifiers -Wno-error=stringop-truncation" \
     yarn install --unsafe-perm --no-update-notifier --no-fund --only=production \
@@ -60,13 +61,11 @@ ARG VCS_URL
 
 COPY --from=build /usr/src/node-red/prod_node_modules ./node_modules
 
-RUN mkdir -p /usr/src/node-red \
- && mkdir /data \
+RUN mkdir -p /usr/src/node-red /data \
  && apk add --no-cache --virtual \    
     avahi-dev \
     binutils-gold \
-    build-base \
-    devtools \ 
+    build-base \ 
     gnupg \
     linux-headers \
     make \
