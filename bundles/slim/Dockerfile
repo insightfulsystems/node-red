@@ -1,7 +1,7 @@
 ARG BASE
 
-### STAGE base ###
 FROM ${BASE} as base
+LABEL stage=base
 
 RUN set -ex \
  && apk add --no-cache \
@@ -32,24 +32,26 @@ COPY common/flows.json /data
 # A minimalist init script
 COPY common/init.sh /init
 
-### STAGE build ###
 FROM base AS build
+LABEL stage=build
 
 # Install Build tools
-RUN apk add --no-cache --virtual \
-    buildtools \
+RUN apk add --no-cache --virtual .build-deps \
+    avahi-dev \
+    avahi-compat-libdns_sd \
     build-base \
     linux-headers \
-    python3 \
+    python2 \
     sqlite \
     udev \
  && CXXFLAGS="-Wno-error=class-memaccess -Wno-error=ignored-qualifiers -Wno-error=stringop-truncation" \
     CFLAGS="-Wno-error=class-memaccess -Wno-error=ignored-qualifiers -Wno-error=stringop-truncation" \
     yarn install --unsafe-perm --no-update-notifier --no-fund --only=production \
- && cp -R node_modules prod_node_modules
+ && cp -R node_modules prod_node_modules \
+ && apk del .build-deps
 
-#### STAGE release #####################################################################################################
 FROM base AS release
+LABEL stage=release
 
 ARG ARCH
 ARG BUILD_DATE

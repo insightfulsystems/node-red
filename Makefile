@@ -50,8 +50,9 @@ tag-%:
 				--build-arg BASE=$(BUILD_IMAGE_NAME):$(NODE_MAJOR_VERSION)-$(ARCH) \
 				--build-arg VCS_REF=$(VCS_REF) \
 				--build-arg VCS_URL=$(VCS_URL) \
-				-t $(IMAGE_NAME):$(BUNDLE)-$(TAG)-$(ARCH) bundles/$(BUNDLE) && \
+				-t $(IMAGE_NAME):$(BUNDLE)-$(TAG)-$(ARCH) bundles/$(BUNDLE) |  sed -e 's/^/$(BUNDLE) $(TAG) $(ARCH): /;' && \
 			rm -rf bundles/$(BUNDLE)/common \
+			docker image prune --filter label=stage=build --filter label=stage=base \
 		;) \
 	)
 
