@@ -41,6 +41,8 @@ tag-%:
 	$(eval TAG := $*)
 	$(foreach ARCH, $(TARGET_ARCHITECTURES), \
 		$(foreach BUNDLE, $(BUNDLES), \
+			docker image prune -f --filter label=stage=base ; \
+			docker image prune -f --filter label=stage=build ; \
 			echo -e "\n\n\n*** Building $(BUNDLE) $(TAG) for $(ARCH) ***\n\n\n" && \
 			cp -a bundles/common bundles/$(BUNDLE) && \
 			cp tags/$(TAG)/package.json bundles/$(BUNDLE)/common/package.json && \
@@ -50,9 +52,8 @@ tag-%:
 				--build-arg BASE=$(BUILD_IMAGE_NAME):$(NODE_MAJOR_VERSION)-$(ARCH) \
 				--build-arg VCS_REF=$(VCS_REF) \
 				--build-arg VCS_URL=$(VCS_URL) \
-				-t $(IMAGE_NAME):$(BUNDLE)-$(TAG)-$(ARCH) bundles/$(BUNDLE) |  sed -e 's/^/$(BUNDLE) $(TAG) $(ARCH): /;' && \
+				-t $(IMAGE_NAME):$(BUNDLE)-$(TAG)-$(ARCH) bundles/$(BUNDLE) | sed -e 's/^/$(BUNDLE) $(TAG) $(ARCH): /;' && \
 			rm -rf bundles/$(BUNDLE)/common \
-			docker image prune --filter label=stage=build --filter label=stage=base \
 		;) \
 	)
 
