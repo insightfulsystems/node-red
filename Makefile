@@ -46,6 +46,7 @@ tag-%:
 			docker image prune -f --filter label=stage=build ; \
 			echo -e "\n\n\n*** Building $(BUNDLE) $(TAG) for $(ARCH) ***\n\n\n" && \
 			cp -a bundles/common bundles/$(BUNDLE) && \
+			chmod a+x bundles/$(BUNDLE)/*.sh && \
 			cp tags/$(TAG)/package.json bundles/$(BUNDLE)/common/package.json && \
 			docker build \
 				--build-arg BUILD_DATE=$(BUILD_DATE) \
