@@ -25,6 +25,7 @@ qemu:
 env:
 	echo -e "\n\n\n*** Building $(BUNDLE) $(TAG) for $(ARCH) ***\n\n" && \
 	cp -a bundles/common bundles/$(BUNDLE) && \
+	chmod a+x bundles/$(BUNDLE)/init
 	cp tags/$(TAG)/package.json bundles/$(BUNDLE)/common/package.json && \
 	docker build \
 		--build-arg BUILD_DATE=$(BUILD_DATE) \
