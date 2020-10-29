@@ -32,7 +32,7 @@
         "node-red-admin": "0.2.6",
         "node-red-contrib-advanced-ping": "1.2.0",
         "node-red-contrib-amazon-echo": "0.1.10",
-        "node-red-contrib-broadlink-control": "2.1.1",
+        "node-red-contrib-broadlink-control": "2.1.2",
         "node-red-contrib-cast": "0.2.15",
         "node-red-contrib-homebridge-automation": "0.0.71",
         "node-red-contrib-homekit-bridged": "1.2.0",
