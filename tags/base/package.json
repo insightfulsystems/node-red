@@ -29,7 +29,7 @@
         }
     ],
     "dependencies": {
-        "node-red": "1.2.2",
+        "node-red": "1.2.3",
 	"@node-red-contrib-themes/midnight-red": "1.4.5",
         "node-red-node-base64": "*"
     },
