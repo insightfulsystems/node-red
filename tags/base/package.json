@@ -1,6 +1,6 @@
 {
     "name": "node-red-insightful-base",
-    "version": "1.2.1",
+    "version": "1.2.4",
     "description": "A visual tool for wiring the Internet of Things",
     "homepage": "http://nodered.org",
     "license": "Apache-2.0",
@@ -29,7 +29,7 @@
         }
     ],
     "dependencies": {
-        "node-red": "1.2.1",
+        "node-red": "1.2.4",
 	"@node-red-contrib-themes/midnight-red": "1.4.5",
         "node-red-node-base64": "*"
     },
