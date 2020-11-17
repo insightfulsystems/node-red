@@ -36,7 +36,7 @@ env:
 		-t $(IMAGE_NAME):$(BUNDLE)-$(TAG)-$(ARCH) bundles/$(BUNDLE) \
 
 node-red:
-	$(foreach tag, $(TAGS), make tag-$(tag);)
+	$(foreach tag, $(TAGS), make clean; make tag-$(tag); make push-$(tag);)
 
 tag-%:
 	$(eval TAG := $*)
