@@ -114,9 +114,11 @@ clean:
 	;)
 	-docker rm -fv $$(docker ps -a -q -f status=exited)
 	-docker rmi -f $$(docker images -q -f dangling=true)
+	#-docker rmi -f $$(docker images | grep '^<none>' | awk '{print $3}')
 	-docker rmi -f $(BUILD_IMAGE_NAME)
 	-docker rmi -f $$(docker images --format '{{.Repository}}:{{.Tag}}' | grep $(IMAGE_NAME))
 
 nuke-everything-from-orbit:
+	-docker prune
 	-docker rm -vf $$(docker ps -a -q)
 	-docker rmi -f $$(docker images -a -q)
