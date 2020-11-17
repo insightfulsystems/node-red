@@ -104,7 +104,7 @@ all: qemu node-red push manifest
 
 test:
 	docker run \
-		-p 1880:1880 \
+		-p 0.0.0.0:1880:1880 \
 		-ti $(IMAGE_NAME):$(BUNDLE)-$(TAG)-$(ARCH)
 
 clean:
