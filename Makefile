@@ -104,7 +104,7 @@ all: qemu node-red push manifest
 
 test:
 	docker run \
-		-p 1880:1880 \
+		-p 0.0.0.0:1880:1880 \
 		-ti $(IMAGE_NAME):$(BUNDLE)-$(TAG)-$(ARCH)
 
 clean:
@@ -119,5 +119,6 @@ clean:
 	-docker rmi -f $$(docker images --format '{{.Repository}}:{{.Tag}}' | grep $(IMAGE_NAME))
 
 nuke-everything-from-orbit:
+	-docker prune
 	-docker rm -vf $$(docker ps -a -q)
 	-docker rmi -f $$(docker images -a -q)
