@@ -47,7 +47,7 @@
         "node-red-contrib-ssdp-discover": "0.0.2",
         "node-red-contrib-wemo-emulator": "1.0.1",
         "node-red-contrib-zigbee2mqtt": "0.6.2",
-        "node-red-dashboard": "2.24.0",
+        "node-red-dashboard": "2.24.1",
         "node-red-node-base64": "0.2.1",
         "node-red-node-daemon": "0.1.2",
         "node-red-node-discovery": "0.0.22",
@@ -57,9 +57,9 @@
         "node-red-node-prowl": "0.0.10",
         "node-red-node-smooth": "0.1.2",
         "node-red-node-sqlite": "0.4.4",
-        "node-red-node-ui-table": "0.3.7",
+        "node-red-node-ui-table": "0.3.8",
         "node-red-node-wol": "0.1.0",
-      	"@node-red-contrib-themes/midnight-red": "1.4.5",
+      	"@node-red-contrib-themes/midnight-red": "1.4.6",
         "node-red": "1.2.6"
     },
     "engines": {
