@@ -49,7 +49,7 @@
         "node-red-contrib-zigbee2mqtt": "0.6.2",
 	"node-red-contrib-linux-memory": "0.8.1",
 	"node-red-contrib-linux-network-stats": "0.2.1",
-	"node-red-contrib-linux-diskio": "0.2.1",
+	"node-red-contrib-linux-diskio": "0.2.2",
 	"node-red-contrib-os": "0.1.7",
         "node-red-dashboard": "2.24.2",
         "node-red-node-base64": "0.2.1",
