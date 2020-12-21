@@ -47,7 +47,7 @@
         "node-red-contrib-ssdp-discover": "0.0.2",
         "node-red-contrib-wemo-emulator": "1.0.1",
         "node-red-contrib-zigbee2mqtt": "0.6.2",
-	"node-red-contrib-linux-memory": "0.8.1",
+	"node-red-contrib-linux-memory": "0.8.3",
 	"node-red-contrib-linux-network-stats": "0.2.3",
 	"node-red-contrib-linux-diskio": "0.2.1",
 	"node-red-contrib-os": "0.1.7",
