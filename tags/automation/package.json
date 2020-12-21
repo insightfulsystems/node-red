@@ -51,7 +51,7 @@
 	"node-red-contrib-linux-network-stats": "0.2.3",
 	"node-red-contrib-linux-diskio": "0.2.1",
 	"node-red-contrib-os": "0.1.7",
-        "node-red-dashboard": "2.24.2",
+        "node-red-dashboard": "2.26.0",
         "node-red-node-base64": "0.2.1",
         "node-red-node-daemon": "0.1.2",
         "node-red-node-discovery": "0.0.22",
