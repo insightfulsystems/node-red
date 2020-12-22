@@ -7,7 +7,7 @@ export TAG_DATE=`date -u +"%Y%m%d"`
 export BUILD_IMAGE_NAME=insightful/alpine-node
 export NODE_MAJOR_VERSION=14
 export TARGET_ARCHITECTURES=amd64 arm32v7 arm32v6 arm64v8
-export TAGS=base bots automation
+export TAGS=bots automation base
 export BUNDLES=slim build
 export BUNDLE?=slim
 export TAG?=base
@@ -66,6 +66,7 @@ push-%:
 	$(eval TAG := $*)
 	$(foreach ARCH, $(TARGET_ARCHITECTURES), \
 		$(foreach BUNDLE, $(BUNDLES), \
+			docker tag $(IMAGE_NAME):$(BUNDLE)-$(TAG) $(IMAGE_NAME):latest;\ 
 			docker push $(IMAGE_NAME):$(BUNDLE)-$(TAG)-$(ARCH) \
 		;) \
 	)
