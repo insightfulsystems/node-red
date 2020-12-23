@@ -66,7 +66,7 @@ push-%:
 	$(eval TAG := $*)
 	$(foreach ARCH, $(TARGET_ARCHITECTURES), \
 		$(foreach BUNDLE, $(BUNDLES), \
-			docker tag $(IMAGE_NAME):$(BUNDLE)-$(TAG) $(IMAGE_NAME):latest;\ 
+			docker tag $(IMAGE_NAME):$(BUNDLE)-$(TAG) $(IMAGE_NAME):latest && \ 
 			docker push $(IMAGE_NAME):$(BUNDLE)-$(TAG)-$(ARCH) \
 		;) \
 	)
