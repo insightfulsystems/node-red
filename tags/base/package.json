@@ -30,7 +30,7 @@
     ],
     "dependencies": {
         "node-red": "1.2.6",
-	"@node-red-contrib-themes/midnight-red": "1.4.7",
+	    "@node-red-contrib-themes/midnight-red": "1.4.7",
         "node-red-node-base64": "*"
     },
     "engines": {

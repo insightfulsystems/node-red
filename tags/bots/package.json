@@ -44,7 +44,7 @@
         "node-red-node-ui-table": "0.3.10",
         "node-red-node-sqlite": "0.5.0",      
         "node-red-contrib-cheerio-function": "1.0.0-rc.3",
-	"node-red-contrib-chatbot": "0.19.7",
+	    "node-red-contrib-chatbot": "0.19.7",
         "@node-red-contrib-themes/midnight-red": "1.4.7",
         "node-red": "1.2.6"
     },

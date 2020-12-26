@@ -46,7 +46,7 @@ RUN apk add --no-cache --virtual .build-deps \
     udev \
  && CXXFLAGS="-Wno-error=class-memaccess -Wno-error=ignored-qualifiers -Wno-error=stringop-truncation" \
     CFLAGS="-Wno-error=class-memaccess -Wno-error=ignored-qualifiers -Wno-error=stringop-truncation" \
-    yarn install --unsafe-perm --no-update-notifier --no-fund --only=production \
+    npm install --unsafe-perm --no-update-notifier --no-fund --only=production \
  && cp -R node_modules prod_node_modules \
  && apk del .build-deps
 
