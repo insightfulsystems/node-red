@@ -22,6 +22,8 @@ export SHELL=/bin/bash
 qemu:
 	-docker run --rm --privileged multiarch/qemu-user-static:register --reset
 
+all: qemu node-red push manifest
+
 env:
 	echo -e "\n\n\n*** Building $(BUNDLE) $(TAG) for $(ARCH) ***\n\n" && \
 	cp -a bundles/common bundles/$(BUNDLE) && \
@@ -36,7 +38,7 @@ env:
 		-t $(IMAGE_NAME):$(BUNDLE)-$(TAG)-$(ARCH) bundles/$(BUNDLE) \
 
 node-red:
-	$(foreach tag, $(TAGS), make clean && make tag-$(tag) && make push-$(tag);)
+	$(foreach tag, $(TAGS), make tag-$(tag);)
 
 tag-%:
 	$(eval TAG := $*)
@@ -102,7 +104,6 @@ local-push-arm32v7:
 	;)
 	docker push $(PRIVATE_REGISTRY)/$(IMAGE_NAME)
 
-all: qemu node-red push manifest
 
 test:
 	docker run \
