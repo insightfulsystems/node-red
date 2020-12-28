@@ -74,6 +74,7 @@ RUN mkdir -p /usr/src/node-red /data \
     python2 \
     python3 \
     sqlite \
+    sqlite-dev \
     udev 
 
 ENV \

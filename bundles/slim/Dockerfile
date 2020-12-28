@@ -43,6 +43,7 @@ RUN apk add --no-cache --virtual .build-deps \
     linux-headers \
     python2 \
     sqlite \
+    sqlite-dev \
     udev \
  && CXXFLAGS="-Wno-error=class-memaccess -Wno-error=ignored-qualifiers -Wno-error=stringop-truncation" \
     CFLAGS="-Wno-error=class-memaccess -Wno-error=ignored-qualifiers -Wno-error=stringop-truncation" \
