@@ -44,7 +44,7 @@
         "node-red-contrib-ui-artless-gauge": "0.3.4",
         "node-red-contrib-ui-level": "0.1.39",
         "node-red-contrib-ui-state-trail": "0.3.1",
-        "node-red-dashboard": "2.26.0",
+        "node-red-dashboard": "2.26.1",
         "node-red-node-base64": "0.2.1",
         "node-red-node-daemon": "0.1.2",
         "node-red-node-feedparser": "0.1.16",
