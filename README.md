@@ -8,7 +8,7 @@
 
 
 ```
-docker run -p 1880:1880 insightful/node-red:slim-base # or slim-automation, or build-bots, etc.
+docker run -p 1880:1880 insightful/node-red:slim-base # or slim-automation, or build-redbot, or build-viseo, etc.
 ```
 
 Multi-arch Node-RED 1.2.7 containers based on the official images, with the following changes:
