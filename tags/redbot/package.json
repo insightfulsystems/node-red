@@ -1,6 +1,5 @@
 {
-    "name": "node-red-insightfuleeeeeeeeee",
-    t
+    "name": "node-red-insightful-redbot",
     "version": "1.2.7",
     "description": "A visual tool for wiring the Internet of Things",
     "homepage": "http://nodered.org",
@@ -50,7 +49,7 @@
         "node-red-node-daemon": "0.1.2",
         "node-red-node-feedparser": "0.1.16",
         "node-red-node-smooth": "0.1.2",
-        "node-red-node-sqlite": "0.5.0",      
+        "node-red-node-sqlite": "0.5.0",
         "node-red-node-ui-list": "0.3.4",
         "node-red-node-ui-table": "0.3.10",
         "node-red-node-ui-vega": "0.1.3",

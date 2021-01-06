@@ -1,0 +1,34 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/tags/redbot"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 10
+  reviewers:
+  - rcarmo
+  assignees:
+  - rcarmo
+- package-ecosystem: npm
+  directory: "/tags/viseo"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 10
+  assignees:
+  - rcarmo
+- package-ecosystem: npm
+  directory: "/tags/base"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 10
+  reviewers:
+  - rcarmo
+  assignees:
+  - rcarmo
+- package-ecosystem: npm
+  directory: "/tags/automation"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 10
+  assignees:
+  - rcarmo

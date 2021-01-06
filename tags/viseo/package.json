@@ -82,7 +82,7 @@
         "node-red": "1.2.7",
         "uuid": "^8.1.0",
         "xmldom": "^0.4.0",
-        "xpath": "^0.0.27"
+        "xpath": "^0.0.32"
     },
     "node-red-catalog": {
         "node-red-contrib-viseo-airtable": "~0.1.3",
