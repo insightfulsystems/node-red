@@ -32,7 +32,7 @@
 	    "@node-red-contrib-themes/midnight-red": "1.4.7",
         "node-red-contrib-dashboard-bar-chart-data": "0.9.7",
         "node-red-contrib-ui-artless-gauge": "0.3.6",
-        "node-red-contrib-ui-level": "0.1.39",
+        "node-red-contrib-ui-level": "0.1.40",
         "node-red-dashboard": "2.27.0",
         "node-red-node-base64": "0.2.1",
         "node-red-node-sqlite": "0.5.0",
