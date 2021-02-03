@@ -1,6 +1,6 @@
 {
     "name": "node-red-insightful-viseo",
-    "version": "1.2.8",
+    "version": "1.2.9",
     "description": "A visual tool for wiring the Internet of Things",
     "homepage": "http://nodered.org",
     "license": "Apache-2.0",
@@ -79,7 +79,7 @@
         "node-red-viseo-helper": "~0.3.2",
         "node-red-viseo-middleware": "~0.2.3",
         "node-red-viseo-storage-plugin": "~1.0.2",
-        "node-red": "1.2.8",
+        "node-red": "1.2.9",
         "uuid": "^8.1.0",
         "xmldom": "^0.4.0",
         "xpath": "^0.0.32"

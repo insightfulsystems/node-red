@@ -11,7 +11,7 @@
 docker run -p 1880:1880 insightful/node-red:slim-base # or slim-automation, or build-redbot, or build-viseo, etc.
 ```
 
-Multi-arch Node-RED 1.2.8 containers based on the official images, with the following changes:
+Multi-arch Node-RED 1.2.9 containers based on the official images, with the following changes:
 
 * Based off `insightful/alpine-node` for updated Alpine and NodeJS versions
 * Includes `git` to enable projects
