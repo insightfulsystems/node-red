@@ -55,6 +55,7 @@
         "node-red-contrib-persist": "1.1.1",
         "node-red-contrib-redis": "1.3.9",
         "node-red-contrib-rss": "0.1.5",
+        "node-red-contrib-slack", "2.0.0",
         "node-red-contrib-ssdp-discover": "0.0.2",
         "node-red-contrib-ui-artless-gauge": "0.3.7",
         "node-red-contrib-ui-joystick", "1.0.0",
