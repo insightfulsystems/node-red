@@ -33,7 +33,7 @@
         "node-red-admin": "0.2.7",
         "node-red-contrib-advanced-ping": "1.2.0",
         "node-red-contrib-amazon-echo": "0.1.10",
-        "node-red-contrib-broadlink-control": "2.1.2",
+        "node-red-contrib-broadlink-control": "2.1.4",
         "node-red-contrib-cast": "0.2.17",
         "node-red-contrib-cheerio-function":"1.0.0-rc.5",
         "node-red-contrib-dashboard-bar-chart-data": "0.9.7",
