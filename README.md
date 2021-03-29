@@ -13,9 +13,8 @@ docker run -p 1880:1880 insightful/node-red:slim-base # or slim-automation, or b
 
 Multi-arch Node-RED 1.2.9 containers based on the official images, with the following changes:
 
-* Based off `insightful/alpine-node` for updated Alpine and NodeJS versions
+* Based on `alpine/3.13.3`
 * Includes `git` to enable projects
 * Includes the [midnight theme](https://github.com/node-red-contrib-themes/midnight-red), for sanity (check its docs to enable it).
-* Uses `yarn` for baking in native packages
 * The `slim` tag strips out build tools for smaller containers
 * The `build` tag includes build tools in the container

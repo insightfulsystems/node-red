@@ -18,7 +18,6 @@ RUN set -ex \
     openssl \
     openssh-client \
  && mkdir -p /usr/src/node-red /data \
- && deluser --remove-home node \
  && adduser -h /usr/src/node-red -D -H node-red -u 1000 \
  && chown -R node-red:root /data && chmod -R g+rwX /data \
  && chown -R node-red:root /usr/src/node-red \
@@ -38,6 +37,8 @@ LABEL stage=build
 
 # Install Build tools
 RUN apk add --no-cache --virtual .build-deps \
+    nodejs \
+    npm \
     avahi-dev \
     build-base \
     linux-headers \
@@ -71,6 +72,8 @@ RUN mkdir -p /usr/src/node-red /data \
     gnupg \
     linux-headers \
     make \
+    nodejs \
+    npm \
     python2 \
     python3 \
     sqlite \
