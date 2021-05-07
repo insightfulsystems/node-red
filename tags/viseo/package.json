@@ -34,7 +34,7 @@
         "moment-timezone": "^0.5.11",
         "node-red-admin": "0.2.7",
         "node-red-contrib-chatbot": "0.19.7",
-        "node-red-contrib-cheerio-function": "1.0.0-rc.5",
+        "node-red-contrib-cheerio-function": "1.0.0-rc.9",
         "node-red-contrib-dashboard-bar-chart-data": "0.9.7",
         "node-red-contrib-dir2files": "0.3.0",
         "node-red-contrib-fs-ops": "1.6.0",
