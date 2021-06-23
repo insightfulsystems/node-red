@@ -57,7 +57,7 @@
         "node-red-contrib-ui-level": "0.1.43",
         "node-red-contrib-ui-state-trail": "0.3.1",
         "node-red-contrib-wemo-emulator": "1.0.3",
-        "node-red-dashboard": "2.29.1",
+        "node-red-dashboard": "2.29.3",
         "node-red-node-base64": "0.3.0",
         "node-red-node-daemon": "0.2.1",
         "node-red-node-discovery": "0.0.22",
