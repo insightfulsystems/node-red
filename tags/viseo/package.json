@@ -32,7 +32,7 @@
         "@node-red-contrib-themes/midnight-red": "1.5.2",
         "deep-extend": "^0.6.0",
         "moment-timezone": "^0.5.11",
-        "node-red-admin": "2.0.0",
+        "node-red-admin": "2.1.0",
         "node-red-contrib-chatbot": "0.19.7",
         "node-red-contrib-cheerio-function": "1.0.0-rc.9",
         "node-red-contrib-dashboard-bar-chart-data": "0.9.7",
