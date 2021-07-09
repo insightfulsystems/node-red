@@ -33,7 +33,7 @@
         "node-red-contrib-dashboard-bar-chart-data": "0.9.7",
         "node-red-contrib-ui-artless-gauge": "0.3.11",
         "node-red-contrib-ui-level": "0.1.44",
-        "node-red-dashboard": "2.29.3",
+        "node-red-dashboard": "2.30.0",
         "node-red-node-base64": "0.3.0",
         "node-red-node-sqlite": "0.6.0",
         "node-red-node-ui-list": "0.3.5",
