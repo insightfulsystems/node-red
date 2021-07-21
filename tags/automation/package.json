@@ -66,7 +66,7 @@
         "node-red-node-smooth": "0.1.2",
         "node-red-node-sqlite": "0.6.0",
         "node-red-node-swagger": "0.1.9",
-        "node-red-node-ui-list": "0.3.5",
+        "node-red-node-ui-list": "0.3.6",
         "node-red-node-ui-table": "0.3.11",
         "node-red-node-ui-vega": "0.2.0",
         "node-red-node-wol": "0.1.0",
