@@ -60,7 +60,7 @@
         "node-red-dashboard": "2.30.0",
         "node-red-node-base64": "0.3.0",
         "node-red-node-daemon": "0.2.1",
-        "node-red-node-discovery": "0.0.22",
+        "node-red-node-discovery": "0.0.23",
         "node-red-node-msgpack": "1.2.1",
         "node-red-node-prowl": "0.0.10",
         "node-red-node-smooth": "0.1.2",
