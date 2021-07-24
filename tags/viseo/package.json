@@ -79,7 +79,7 @@
         "node-red-viseo-helper": "~0.3.2",
         "node-red-viseo-middleware": "~0.2.3",
         "node-red-viseo-storage-plugin": "~1.0.2",
-        "node-red": "2.0.2",
+        "node-red": "2.0.3",
         "uuid": "^8.1.0",
         "xmldom": "^0.6.0",
         "xpath": "^0.0.32"
