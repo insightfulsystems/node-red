@@ -39,7 +39,7 @@
         "node-red-contrib-fs-ops": "1.6.0",
         "node-red-contrib-httpauth": "1.0.12",
         "node-red-contrib-lgtv": "1.1.0",
-        "node-red-contrib-light-scheduler": "0.0.17",
+        "node-red-contrib-light-scheduler": "0.0.18",
         "node-red-contrib-linux-memory": "0.8.5",
         "node-red-contrib-linux-network-stats": "0.2.5",
         "node-red-contrib-linux-diskio": "0.2.5",
