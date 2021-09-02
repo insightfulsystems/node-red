@@ -55,7 +55,7 @@
         "node-red-contrib-ui-artless-gauge": "0.3.11",
         "node-red-contrib-ui-joystick": "1.0.0",
         "node-red-contrib-ui-level": "0.1.45",
-        "node-red-contrib-ui-state-trail": "0.3.1",
+        "node-red-contrib-ui-state-trail": "0.3.2",
         "node-red-contrib-wemo-emulator": "1.0.3",
         "node-red-dashboard": "2.30.0",
         "node-red-node-base64": "0.3.0",
