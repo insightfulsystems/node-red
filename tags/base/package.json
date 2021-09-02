@@ -35,7 +35,7 @@
         "node-red-contrib-ui-level": "0.1.45",
         "node-red-dashboard": "2.30.0",
         "node-red-node-base64": "0.3.0",
-        "node-red-node-sqlite": "0.6.0",
+        "node-red-node-sqlite": "1.0.0",
         "node-red-node-ui-list": "0.3.6",
         "node-red-node-ui-table": "0.3.11",
         "node-red": "2.0.6"
