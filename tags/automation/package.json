@@ -29,7 +29,7 @@
         }
     ],
     "dependencies": {
-      	"@node-red-contrib-themes/midnight-red": "2.0.5",
+      	"@node-red-contrib-themes/midnight-red": "2.1.0",
         "node-red-admin": "2.2.1",
         "node-red-contrib-advanced-ping": "1.2.0",
         "node-red-contrib-cheerio-function":"1.0.0-rc.9",
