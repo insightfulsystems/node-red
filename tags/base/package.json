@@ -29,7 +29,7 @@
         }
     ],
     "dependencies": {
-	    "@node-red-contrib-themes/midnight-red": "2.0.5",
+	    "@node-red-contrib-themes/midnight-red": "2.1.0",
         "node-red-contrib-dashboard-bar-chart-data": "0.9.7",
         "node-red-contrib-ui-artless-gauge": "0.3.11",
         "node-red-contrib-ui-level": "0.1.45",
