@@ -30,7 +30,7 @@
     ],
     "dependencies": {
         "node-red-admin": "2.2.1",
-        "@node-red-contrib-themes/midnight-red": "2.0.5",
+        "@node-red-contrib-themes/midnight-red": "2.1.1",
         "node-red-contrib-chatbot": "0.19.10",
         "node-red-contrib-cheerio-function": "1.0.0-rc.9",
         "node-red-contrib-dashboard-bar-chart-data": "0.9.7",
