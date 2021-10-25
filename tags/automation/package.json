@@ -70,7 +70,7 @@
         "node-red-node-ui-table": "0.3.11",
         "node-red-node-ui-vega": "0.2.0",
         "node-red-node-wol": "0.2.0",
-        "node-red": "2.1.0"
+        "node-red": "2.1.2"
     },
     "engines": {
         "node": "14.*.*"
