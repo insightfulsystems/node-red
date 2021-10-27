@@ -48,7 +48,7 @@
         "node-red-contrib-ui-state-trail": "0.3.2",
         "node-red-contrib-viseo-bot-message": "0.9.0",
         "node-red-contrib-viseo-bot-socketio": "0.2.2",
-        "node-red-contrib-viseo-botbuilder": "1.1.0",
+        "node-red-contrib-viseo-botbuilder": "1.2.1",
         "node-red-contrib-viseo-credentials": "0.1.1",
         "node-red-contrib-viseo-dialogflow": "1.0.1",
         "node-red-contrib-viseo-directline": "0.0.1",
