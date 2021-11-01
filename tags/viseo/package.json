@@ -29,7 +29,7 @@
         }
     ],
     "dependencies": {
-        "@node-red-contrib-themes/midnight-red": "2.1.1",
+        "@node-red-contrib-themes/midnight-red": "2.1.2",
         "deep-extend": "^0.6.0",
         "moment-timezone": "^0.5.11",
         "node-red-contrib-chatbot": "0.19.10",
