@@ -59,7 +59,7 @@
         "node-red-contrib-wemo-emulator": "1.0.4",
         "node-red-dashboard": "3.1.2",
         "node-red-node-base64": "0.3.0",
-        "node-red-node-daemon": "0.3.0",
+        "node-red-node-daemon": "0.4.0",
         "node-red-node-discovery": "0.0.23",
         "node-red-node-msgpack": "1.2.1",
         "node-red-node-prowl": "0.0.10",
