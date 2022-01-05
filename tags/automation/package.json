@@ -64,7 +64,7 @@
         "node-red-node-msgpack": "1.2.1",
         "node-red-node-prowl": "0.0.10",
         "node-red-node-smooth": "0.1.2",
-        "node-red-node-sqlite": "1.0.1",
+        "node-red-node-sqlite": "1.0.2",
         "node-red-node-swagger": "0.1.9",
         "node-red-node-ui-list": "0.3.6",
         "node-red-node-ui-table": "0.3.11",
