@@ -38,7 +38,7 @@
         "node-red-node-sqlite": "1.0.3",
         "node-red-node-ui-list": "0.3.6",
         "node-red-node-ui-table": "0.3.11",
-        "node-red": "2.1.6"
+        "node-red": "2.2.2"
     },
     "engines": {
         "node": "14.*.*"
