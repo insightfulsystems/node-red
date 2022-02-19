@@ -67,7 +67,7 @@
         "node-red-node-sqlite": "1.0.3",
         "node-red-node-swagger": "0.1.9",
         "node-red-node-ui-list": "0.3.6",
-        "node-red-node-ui-table": "0.3.11",
+        "node-red-node-ui-table": "0.3.12",
         "node-red-node-ui-vega": "0.2.1",
         "node-red-node-wol": "0.2.0",
         "node-red": "2.2.2"
