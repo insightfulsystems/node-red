@@ -1,6 +1,6 @@
 {
     "name": "node-red-insightful-base",
-    "version": "1.2.9",
+    "version": "2.2.2",
     "description": "A visual tool for wiring the Internet of Things",
     "homepage": "http://nodered.org",
     "license": "Apache-2.0",
@@ -29,15 +29,14 @@
         }
     ],
     "dependencies": {
-	    "@node-red-contrib-themes/midnight-red": "2.1.4",
         "node-red-contrib-dashboard-bar-chart-data": "0.9.8",
         "node-red-contrib-ui-artless-gauge": "0.3.11",
         "node-red-contrib-ui-level": "0.1.46",
-        "node-red-dashboard": "3.1.5",
+        "node-red-dashboard": "3.1.6",
         "node-red-node-base64": "0.3.0",
         "node-red-node-sqlite": "1.0.3",
         "node-red-node-ui-list": "0.3.6",
-        "node-red-node-ui-table": "0.3.11",
+        "node-red-node-ui-table": "0.3.12",
         "node-red": "2.2.2"
     },
     "engines": {
