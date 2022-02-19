@@ -15,6 +15,5 @@ Multi-arch Node-RED containers based on the official images, with the following 
 
 * Based on `alpine/3.13.4`
 * Includes `git` to enable projects
-* Includes the [midnight theme](https://github.com/node-red-contrib-themes/midnight-red), for sanity (check its docs to enable it).
 * The `slim` tag strips out build tools for smaller containers
 * The `build` tag includes build tools in the container
