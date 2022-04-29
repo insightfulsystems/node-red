@@ -45,7 +45,7 @@
         "node-red-contrib-ui-artless-gauge": "0.3.11",
         "node-red-contrib-ui-level": "0.1.46",
         "node-red-contrib-ui-state-trail": "0.4.4",
-        "node-red-contrib-viseo-bot-message": "0.10.8",
+        "node-red-contrib-viseo-bot-message": "0.10.10",
         "node-red-contrib-viseo-bot-socketio": "0.2.2",
         "node-red-contrib-viseo-botbuilder": "1.2.3",
         "node-red-contrib-viseo-credentials": "0.1.1",
