@@ -29,7 +29,6 @@
         }
     ],
     "dependencies": {
-        "node-red-admin": "2.2.3",
         "node-red-contrib-advanced-ping": "1.2.0",
         "node-red-contrib-cheerio-function":"1.0.0-rc.9",
         "node-red-contrib-dashboard-bar-chart-data": "0.9.8",
@@ -37,6 +36,7 @@
         "node-red-contrib-feedparser-extended": "0.0.2",
         "node-red-contrib-fs-ops": "1.6.0",
         "node-red-contrib-httpauth": "1.0.12",
+        "node-red-contrib-homekit-bridged": "1.4.6",
         "node-red-contrib-lgtv": "1.1.0",
         "node-red-contrib-light-scheduler": "0.0.18",
         "node-red-contrib-linux-memory": "0.8.5",
@@ -56,7 +56,7 @@
         "node-red-contrib-ui-level": "0.1.46",
         "node-red-contrib-ui-state-trail": "0.4.4",
         "node-red-contrib-wemo-emulator": "1.0.5",
-        "node-red-dashboard": "3.1.6",
+        "node-red-dashboard": "3.1.7",
         "node-red-node-base64": "0.3.0",
         "node-red-node-daemon": "0.4.0",
         "node-red-node-discovery": "0.0.23",
@@ -72,6 +72,6 @@
         "node-red": "2.2.2"
     },
     "engines": {
-        "node": "14.*.*"
+        "node": "16.*.*"
     }
 }

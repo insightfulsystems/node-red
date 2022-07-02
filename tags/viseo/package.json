@@ -32,7 +32,6 @@
         "deep-extend": "^0.6.0",
         "moment-timezone": "^0.5.11",
         "node-red-contrib-chatbot": "0.19.16",
-        "node-red-admin": "2.2.3",
         "node-red-contrib-cheerio-function": "1.0.0-rc.9",
         "node-red-contrib-dashboard-bar-chart-data": "0.9.8",
         "node-red-contrib-dir2files": "0.3.0",
@@ -65,7 +64,7 @@
         "node-red-contrib-viseo-random": "0.4.0",
         "node-red-contrib-viseo-repeat": "0.3.0",
         "node-red-contrib-viseo-tokenizer": "0.3.0",
-        "node-red-dashboard": "3.1.6",
+        "node-red-dashboard": "3.1.7",
         "node-red-node-base64": "0.3.0",
         "node-red-node-daemon": "0.4.0",
         "node-red-node-feedparser": "0.2.2",
@@ -123,6 +122,6 @@
         "node-red-contrib-viseo-zendesk": "0.1.0"
     },
     "engines": {
-        "node": "14.*.*"
+        "node": "16.*.*"
     }
 }
