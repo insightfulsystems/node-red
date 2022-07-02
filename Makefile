@@ -5,9 +5,9 @@ export VCS_URL=https://github.com/insightfulsystems/node-red
 export BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"`
 export TAG_DATE=`date -u +"%Y%m%d"`
 export BUILD_IMAGE_NAME=alpine:3.16.0
-export TAGS=automation base
-export BUNDLES=build slim
-export TARGET_ARCHITECTURES=linux/arm/v7,linux/arm/v6,linux/arm64,linux/amd64
+export TAGS?=automation base
+export BUNDLES?=build ffmpeg slim
+export TARGET_ARCHITECTURES?=linux/arm/v7,linux/arm/v6,linux/arm64,linux/amd64
 export SHELL=/bin/bash
 
 # Permanent local overrides
