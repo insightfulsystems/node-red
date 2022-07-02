@@ -41,7 +41,7 @@ RUN apk add --no-cache --virtual .build-deps \
     avahi-compat-libdns_sd \
     build-base \
     linux-headers \
-    python2 \
+    python3 \
     sqlite \
     sqlite-dev \
     udev \

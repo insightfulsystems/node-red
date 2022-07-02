@@ -49,7 +49,7 @@ RUN apk add --no-cache --virtual .build-deps \
     avahi-dev \
     build-base \
     linux-headers \
-    python2 \
+    python3 \
     sqlite \
     sqlite-dev \
     udev \
@@ -82,7 +82,6 @@ RUN mkdir -p /usr/src/node-red /data \
     make \
     nodejs \
     npm \
-    python2 \
     python3 \
     sqlite \
     sqlite-dev \
